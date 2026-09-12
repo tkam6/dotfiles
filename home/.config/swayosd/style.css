@@ -1,0 +1,50 @@
+window#osd {
+    border-radius: 15px;
+    border: none;
+    background: rgba(0, 0, 0, 0.8)
+}
+
+#container {
+    margin: 16px;
+}
+
+image, label {
+    color: @theme_fg_color;
+}
+
+progressbar:disabled,
+image:disabled {
+    opacity: 0.5;
+}
+
+progressbar,
+segmentedprogress {
+    min-height: 6px;
+    border-radius: 999px;
+    background: transparent;
+    border: none;
+}
+
+trough,
+segment {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: alpha(@theme_fg_color, 0.5);
+}
+
+progress,
+segment.active {
+    min-height: inherit;
+    border-radius: inherit;
+    border: none;
+    background: @theme_fg_color;
+}
+
+segment:first-child {
+    margin-left: 0;
+}
+
+segment {
+    margin-left: 8px;
+}

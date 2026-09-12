@@ -1,0 +1,774 @@
+config_version = 14
+
+[accessibility]
+ui_scale = 1.1000000089406967
+
+[audio]
+enable_overdrive = true
+enable_sounds = true
+
+[bar]
+order = [ "main" ]
+
+    [bar.main]
+    background_opacity = 0.74999998323619366
+    contact_shadow = true
+    end = [
+        "wallhaven",
+        "lock_keys",
+        "tray",
+        "privacy",
+        "notifications",
+        "caffeine",
+        "power_profile",
+        "brightness",
+        "input_volume",
+        "volume",
+        "battery",
+        "bluetooth",
+        "network",
+        "control-center",
+        "clock"
+    ]
+    margin_ends = 120
+    radius = 20
+    scale = 1.1000000089406967
+    show_on_workspace_switch = false
+    thickness = 48
+    widget_spacing = 15
+
+        [[bar.main.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "close", "fullscreen-button", "maximise-button", "minimise-button" ]
+        opacity = 0.30000001192092896
+        padding = 10.0
+
+        [[bar.main.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "sysmon", "ram", "cpu", "temp" ]
+        opacity = 0.25
+        padding = 10.0
+        widget_spacing = 11
+
+[battery]
+warning_threshold = 25
+
+[calendar]
+
+[config]
+
+[control_center]
+hidden_tabs = [ "weather", "screen-time" ]
+shortcuts = []
+sidebar_section = "none"
+width = 600
+
+    [control_center.calendar]
+    show_events_card = false
+    show_week_numbers = true
+
+[desktop_widgets]
+schema_version = 2
+widget_order = [ "desktop-widget-0000000000000002", "desktop-widget-0000000000000003", "desktop-widget-0000000000000001" ]
+
+    [desktop_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget.desktop-widget-0000000000000001]
+    box_height = 480.0
+    box_width = 824.0
+    cx = 924.0
+    cy = 304.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000001.settings]
+        background = false
+        background_padding = 5
+        background_radius = 16
+        center_text = true
+        clock_style = "digital"
+        format = "{:%I:%M}"
+        shadow = false
+        timezone = ""
+
+    [desktop_widgets.widget.desktop-widget-0000000000000002]
+    box_height = 160.0
+    box_width = 448.0
+    cx = 960.0
+    cy = 896.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000002.settings]
+        background = false
+        background_radius = 16
+        bands = 64
+        show_when_idle = false
+
+    [desktop_widgets.widget.desktop-widget-0000000000000003]
+    box_height = 176.0
+    box_width = 448.0
+    cx = 952.0
+    cy = 1088.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "media_player"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
+        background_opacity = 0.34999999999999998
+        background_radius = 24
+        hide_when_no_media = true
+        layout = "horizontal"
+
+[dock]
+auto_hide = true
+background_opacity = 0.64999998547136784
+enabled = true
+launcher_icon = "rocket"
+pinned = [ "firefox", "Alacritty", "org.gnome.Nautilus" ]
+radius = 24
+reserve_space = false
+show_dots = true
+
+[hot_corners]
+enabled = true
+
+    [hot_corners.top_left]
+    action = "command"
+    command = "hyprctl dispatch 'hl.dsp.window.()'"
+
+[idle]
+behavior_order = [ "screen-off", "lock", "Noctalia v4 Lockscreen", "lock-and-suspend", "Lock With Hyprlock" ]
+pre_action_fade_seconds = 10
+
+    [idle.behavior."Lock With Hyprlock"]
+    action = "command"
+    command = "pidof hyprlock || hyprlock"
+    enabled = false
+    timeout = 360.0
+
+    [idle.behavior."Noctalia v4 Lockscreen"]
+    action = "command"
+    command = "qs -c noctalia-shell ipc call lockScreen lock"
+    enabled = false
+    timeout = 360.0
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = false
+    timeout = 360.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = false
+    timeout = 600.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = false
+    timeout = 300.0
+
+[location]
+auto_locate = true
+
+[lockscreen]
+allow_empty_password = true
+blur_intensity = 0.59999998658895493
+blurred_desktop = true
+tint_intensity = 0.4999999888241291
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@WAYLAND-1",
+    "lockscreen-login-box@WL-1",
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005",
+    "lockscreen-widget-0000000000000006",
+    "lockscreen-widget-0000000000000007",
+    "lockscreen-widget-0000000000000008",
+    "lockscreen-widget-0000000000000009"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@WAYLAND-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 640.0
+    cy = 538.0
+    output = "WAYLAND-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@WAYLAND-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 640.0
+    cy = 601.0
+    output = "WL-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 384.0
+    cx = 959.99993896484375
+    cy = 1091.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = true
+        input_opacity = 1.0
+        input_radius = 15.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = false
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = false
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 640.0
+    box_width = 1240.0
+    cx = 960.0
+    cy = 488.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+        center_text = true
+        clock_style = "digital"
+        color = "on_primary"
+        format = "{:%I:%M}"
+        shadow = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 96.0
+    box_width = 184.0
+    cx = 960.0
+    cy = 72.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = false
+        forecast_days = 3
+        shadow = true
+        show_forecast = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 929.79998779296875
+    cy = 1161.8004150390625
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = true
+        command = "systemctl hibernate"
+        glyph = "hibernate"
+        variant = "default"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000006]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 993.79998779296875
+    cy = 1161.800537109375
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000006.settings]
+        background = true
+        command = "systemctl poweroff"
+        glyph = "power"
+        variant = "default"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1057.800048828125
+    cy = 1161.8006591796875
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
+        background = true
+        command = "systemctl reboot"
+        glyph = "reboot"
+        variant = "default"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000008]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 862.20001220703125
+    cy = 1161.8004150390625
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "button"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000008.settings]
+        background = true
+        command = "systemctl suspend"
+        glyph = "suspend"
+        variant = "default"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000009]
+    box_height = 128.0
+    box_width = 288.0
+    cx = 952.0
+    cy = 968.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "media_player"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000009.settings]
+        background = true
+        background_opacity = 0.34999999999999998
+        hide_when_no_media = true
+        layout = "horizontal"
+
+[nightlight]
+enabled = true
+temperature_night = 5000
+
+[osd]
+position = "bottom_right"
+position_vertical = "center_right"
+
+    [osd.kinds]
+    bluetooth = false
+    caffeine = false
+    dnd = false
+    keyboard_backlight = false
+    keyboard_layout = false
+    lock_keys = false
+    nightlight = false
+    power_profile = false
+    wifi = false
+
+[plugin_settings."noctalia/wallpaper_depth"]
+manager_open_near_click = true
+
+[plugins]
+auto_update = "none"
+enabled = [ "vallu/tb_buttons", "vallu/tb_fullscreen_button", "vallu/titlebar_buttons", "noctalia/wallhaven" ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "path"
+    location = "~/projs/"
+    name = "my-plugins"
+
+[shell]
+avatar_path = "/home/vallu/.config/noctalia/tux.jpg"
+clipboard_enabled = false
+clipboard_history_max_entries = 500
+corner_radius_scale = 1.5000000223517418
+date_format = "%A, %d %B %Y"
+external_ip_enabled = true
+font_family = "Inter 24pt SemiBold"
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+
+    [shell.animation]
+    speed = 1.1500000171363354
+
+    [shell.launcher.providers.session]
+    prefix = ""
+
+    [shell.panel]
+    borders = false
+    clipboard_placement = "attached"
+    clipboard_position = "auto"
+    launcher_placement = "attached"
+    launcher_position = "auto"
+    open_near_click_clipboard = true
+    open_near_click_control_center = true
+    open_near_click_launcher = true
+    open_near_click_session = true
+    open_near_click_wallpaper = true
+    session_placement = "floating"
+    session_position = "center"
+
+    [shell.screen_corners]
+    enabled = true
+    size = 30
+
+    [shell.session]
+    grid = true
+
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "2"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 0.0
+        enabled = true
+        shortcut = "5"
+        variant = "destructive"
+
+        [[shell.session.actions]]
+        action = "command"
+        command = "~/bin/hibernate"
+        countdown_seconds = 0.0
+        enabled = true
+        label = "Hibernate"
+        variant = "default"
+
+[system.monitor]
+cpu_usage_activity_threshold = 40
+cpu_usage_critical_threshold = 80
+disk_pct_activity_threshold = 65
+disk_pct_critical_threshold = 90
+disk_poll_seconds = 30
+memory_poll_seconds = 3
+ram_pct_activity_threshold = 50
+ram_pct_critical_threshold = 85
+
+[templates]
+
+[theme]
+builtin = "Ayu"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "wallpaper"
+wallpaper_scheme = "vibrant"
+
+    [theme.templates]
+    enable_builtin_templates = false
+
+[wallpaper]
+directory = "/e/en_azaghi/"
+edge_smoothness = 0.59999998658895493
+transition = [ "disc", "wipe" ]
+transition_duration = 3000
+transition_on_startup = true
+
+    [wallpaper.automation]
+    interval_seconds = 600
+
+    [wallpaper.default]
+    path = "/e/en_azaghi/ennaval/006.webp"
+
+    [wallpaper.last]
+    path = "/e/en_azaghi/ennaval/006.webp"
+
+    [wallpaper.monitors.WAYLAND-1]
+    path = "/home/vallu/Pictures/wallpapers/general/big-sur-6.jpg"
+
+    [wallpaper.monitors.WL-1]
+    path = "/home/vallu/Pictures/wallpapers/general/african-light.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/e/en_azaghi/ennaval/006.webp"
+
+[weather]
+refresh_minutes = 60
+
+[widget.active_window]
+font_weight = 700
+icon_size = 16
+interactive = false
+max_length = 280
+title_scroll = "always"
+
+[widget.battery]
+show_label = false
+
+    [widget.battery.actions]
+    middle = "none"
+
+[widget.bluetooth.actions]
+middle = "none"
+
+[widget.brightness]
+show_label = false
+
+    [widget.brightness.actions]
+    middle = "none"
+
+[widget.caffeine.actions]
+middle = "none"
+
+[widget.clock]
+format = "{:%I:%M %p\\n%d-%m-%Y}"
+vertical_format = "{:%d\\n%a\\n%I\\n%M}"
+
+    [widget.clock.actions]
+    middle = "none"
+
+[widget.close]
+color = "error"
+type = "vallu/titlebar_buttons:close"
+
+    [widget.close.actions]
+    left = "exec hyprctl dispatch 'hl.dsp.window.close()'"
+    middle = "none"
+    right = "exec hyprctl dispatch 'hl.dsp.window.kill()'"
+
+[widget.control-center]
+capsule_opacity = 0.5
+custom_image = "/home/vallu/.config/noctalia/tux.jpg"
+glyph = "adjustments-alt"
+
+    [widget.control-center.actions]
+    middle = "settings-open"
+
+[widget.cpu]
+font_family = "Iosevka NFP"
+font_scale = 1.0
+font_weight = 900
+visualization = "none"
+
+    [widget.cpu.actions]
+    middle = "none"
+
+[widget.fullscreen-button]
+type = "vallu/titlebar_buttons:fullscreen-button"
+
+    [widget.fullscreen-button.actions]
+    left = "exec hyprctl dispatch 'hl.dsp.window.fullscreen()'"
+    middle = "none"
+
+[widget.input_volume]
+show_label = false
+
+    [widget.input_volume.actions]
+    middle = "none"
+
+[widget.keyboard_layout]
+font_family = "Iosevka"
+
+[widget.lock_keys.actions]
+middle = "none"
+
+[widget.maximise-button]
+type = "vallu/titlebar_buttons:maximise-button"
+
+    [widget.maximise-button.actions]
+    left = "exec hyprctl dispatch 'hl.dsp.window.fullscreen({ mode = \"maximized\" })'"
+    middle = "none"
+
+[widget.media]
+album_art_only = true
+capsule_opacity = 0.29999999999999999
+capsule_padding = 12
+hide_when_no_media = true
+max_length = 120
+show_progress = true
+title_scroll = "always"
+
+    [widget.media.actions]
+    middle = "none"
+
+[widget.minimise-button]
+type = "vallu/titlebar_buttons:minimise-button"
+
+    [widget.minimise-button.actions]
+    left = "exec hyprctl dispatch 'hl.dsp.window.move({ workspace = \"special:magic\", follow = false })'"
+    middle = "none"
+
+[widget.network]
+show_label = false
+
+    [widget.network.actions]
+    middle = "none"
+
+[widget.notifications.actions]
+middle = "none"
+
+[widget.power_profile.actions]
+middle = "none"
+scroll_down = "none"
+scroll_up = "none"
+
+[widget.privacy]
+icon_spacing = 6
+inactive_color = "error"
+
+    [widget.privacy.actions]
+    middle = "none"
+
+[widget.ram]
+show_value = false
+stat = "ram_pct"
+
+    [widget.ram.actions]
+    middle = "none"
+
+[widget.sysmon]
+show_value = false
+stat = "disk_used_pct"
+
+    [widget.sysmon.actions]
+    middle = "none"
+
+[widget.temp]
+font_family = "Iosevka NFP"
+font_scale = 1.0
+font_weight = 900
+glyph = "temperature"
+glyph_position = "after"
+visualization = "none"
+
+    [widget.temp.actions]
+    middle = "none"
+
+[widget.tray]
+drawer = true
+
+[widget.volume]
+show_label = false
+
+    [widget.volume.actions]
+    middle = "none"
+
+[widget.wallhaven]
+api_key = "WUPUjQjGse7wIpkbaIbRA7cyZ7ET8jDA"
+glyph = "wallpaper-selector"
+type = "noctalia/wallhaven:wallhaven"
+
+    [widget.wallhaven.actions]
+    middle = "none"
+
+[widget.weather]
+show_condition = false
+
+[widget.workspaces]
+active_pill_size = 2.0
+empty_color = "primary"
+focused_color = "secondary"
+font_weight = 1000
+labels_only_when_occupied = true
+occupied_color = "primary"
+show_icons = false
+
+    [widget.workspaces.actions]
+    middle = "none"

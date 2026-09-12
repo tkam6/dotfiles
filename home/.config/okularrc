@@ -1,0 +1,42 @@
+[Desktop Entry]
+FullScreen=false
+shouldShowMenuBarComingFromFullScreen=false
+shouldShowToolBarComingFromFullScreen=true
+
+[General]
+LockSidebar=true
+ShowSidebar=false
+
+[MainWindow]
+MenuBar=Disabled
+
+[MainWindow][Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/The Bite of the Mango -- Mariatu Kamara, Susan McClelland -- Annick Press Ltd (eBOUND), Buffalo, N_Y_, 2008 -- Annick Press, Limited -- isbn13 9781554511587 -- e9141dcdfe0373036bf3bd766d401e8c -- Anna’s Archive.pdf
+File10[$e]=$HOME/Downloads/tacticalphysique.pdf
+File2[$e]=$HOME/Downloads/func_mtrls_till_midsem.pdf
+File3[$e]=$HOME/Downloads/srfc_engg_and_coating_tech_till_midsem.pdf
+File4[$e]=$HOME/Downloads/srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
+File5[$e]=$HOME/Downloads/apaar.pdf
+File6[$e]=$HOME/Downloads/ME4329E Surface Engineering and coating technology 24-08-2027_.pdf
+File7[$e]=$HOME/Downloads/GATE2027-IB.pdf
+File8[$e]=$HOME/Downloads/archbook.pdf
+File9[$e]=/d/NIT/7_sem/srfc_engg/srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
+Name1[$e]=The Bite of the Mango -- Mariatu Kamara, Susan McClelland -- Annick Press Ltd (eBOUND), Buffalo, N_Y_, 2008 -- Annick Press, Limited -- isbn13 9781554511587 -- e9141dcdfe0373036bf3bd766d401e8c -- Anna’s Archive.pdf
+Name10[$e]=tacticalphysique.pdf
+Name2[$e]=func_mtrls_till_midsem.pdf
+Name3[$e]=srfc_engg_and_coating_tech_till_midsem.pdf
+Name4[$e]=srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
+Name5[$e]=apaar.pdf
+Name6[$e]=ME4329E Surface Engineering and coating technology 24-08-2027_.pdf
+Name7[$e]=GATE2027-IB.pdf
+Name8[$e]=archbook.pdf
+Name9[$e]=srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
+
+[Toolbar mainToolBar]
+ToolButtonStyle=IconOnly
+
+[UiSettings]
+ColorScheme=BreezeDark

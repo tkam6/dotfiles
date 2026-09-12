@@ -1,0 +1,19 @@
+{
+  "id": "hypr-fullscreen-indicator",
+  "name": "Fullscreen Indicator",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "3.6.0",
+  "author": "Your Name",
+  "license": "MIT",
+  "repository": "https://github.com/yourusername/noctalia-plugins",
+  "description": "Shows and toggles the fullscreen state of the active Hyprland window",
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {}
+  }
+}

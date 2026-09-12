@@ -1,0 +1,7 @@
+[flavor]
+# dark = "flexoki-dark"
+dark = "nord"
+
+[indicator]
+# parent = { reversed = true }
+preview = { italic = true }

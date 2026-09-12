@@ -1,0 +1,4 @@
+[mgr]
+prepend_keymap = [
+    { on = "q", run = "", desc = "Stop killing Yazi on `q`" },
+]

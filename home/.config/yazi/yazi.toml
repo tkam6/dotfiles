@@ -1,0 +1,68 @@
+[mgr]
+ratio = [ 1, 3, 1 ]
+linemode = "sz_and_perms"
+show_hidden = true
+title_format = "{cwd}"
+
+[input]
+cursor_blink = true
+
+# cd
+cd_title  = " cd to? "
+cd_origin = "bottom-left"
+cd_offset = [ 0, -1, 50, 3 ]
+
+# create
+# Contains an en space!
+create_title  = [ " touch what? ", " mkdir what? " ]
+create_origin = "bottom-left"
+create_offset = [ 0, -1, 50, 3 ]
+
+# rename
+# Contains an en space!
+rename_title  = " mv what? "
+rename_origin = "bottom-left"
+rename_offset = [ 0, -1, 50, 3 ]
+
+# filter
+# Contains an en space!
+filter_title  = " filter "
+filter_origin = "bottom-left"
+filter_offset = [ 0, -1, 50, 3 ]
+
+# find
+# Contains an en space!
+find_title  = [ " / ", " ? " ]
+find_origin = "bottom-left"
+find_offset = [ 0, -1, 50, 3 ]
+
+# search
+# Contains an en space!
+search_title  = " search via {n} "
+search_origin = "bottom-left"
+search_offset = [ 0, -1, 50, 3 ]
+
+# shell
+# Contains an en space!
+shell_title  = [ " ! ", " ! [block] " ]
+shell_origin = "bottom-left"
+shell_offset = [ 0, -1, 50, 3 ]
+
+[confirm]
+trash_title = " rm {n} items? "
+trash_offset = [ 0, 0, 50, 15 ]
+
+delete_title = " rm {n} items? [permanent] "
+delete_offset = [ 0, 0, 50, 15 ]
+
+overwrite_title = " overwrite? "
+overwrite_body = "Item will be overwritten:"
+overwrite_offset = [ 0, 0, 50, 15 ]
+
+quit_title = " quit? "
+quit_body = "There are unfinished tasks"
+quit_offset = [ 0, 0, 50, 15 ]
+
+[pick]
+open_title = " open with? "
+open_origin = "bottom-left"

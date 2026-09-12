@@ -1,0 +1,8 @@
+{
+    "extractor": {
+        "base-directory": "/home/vallu/personal/g_dl/",
+        "instagram": {
+            "cookies": "$HOME/personal/g_dl/ig_cookies.txt"
+        }
+    }
+}

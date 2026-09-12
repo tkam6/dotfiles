@@ -1,0 +1,28 @@
+configuration {
+    modes: "drun,run";
+    font: "Iosevka Nerd Font Mono Bold 12";
+    location: 0;
+    fixed-num-lines: false;
+    show-icons: true;
+    terminal: "alacritty";
+
+    drun-display-format: "{name} -> {exec}";
+    drun-show-actions: false;
+    sort: true;
+    sorting-method: "fzf";
+
+    sidebar-mode: true;
+    combi-modes: "drun,run";
+
+    matching: "fuzzy";
+    tokenize: true;
+    threads: 4;
+    scroll-method: 1;
+    window-format: "{c} {t}";
+    click-to-exit: false;
+    combi-hide-mode-prefix: false;
+    combi-display-format: "{mode} {text}";
+}
+
+// @theme "/home/vallu/.local/share/rofi/themes/rounded-green-dark.rasi"
+@theme "/home/vallu/.local/share/rofi/themes/elegant.rasi"

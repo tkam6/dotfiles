@@ -1,0 +1,139 @@
+* {
+    font-family: "Iosevka Fixed Extrabold", "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 15px;
+    color: rgba(200, 200, 200, 1.0);
+    background-color: rgba(0, 0, 0, 0.0);
+}
+
+/* Float the top bar. */
+#waybar > box {
+    margin: 5px 10px 0 10px;
+    padding: 2px;
+    background-color: rgba(30, 30, 30, 0.8);
+    border-radius: 20px;
+}
+
+/* Window module becomes transparent when empty */
+window#waybar.empty #window {
+    background: transparent;
+}
+
+window#waybar.empty #custom-sepr {
+    background: transparent;
+}
+
+.module {
+    padding: 0 1rem;
+}
+
+.modules-left {
+    padding: 1px;
+}
+
+.modules-center {
+    padding: 1px;
+}
+
+.modules-right {
+    padding: 1px;
+}
+
+#workspaces {
+    background-color: transparent;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#workspaces button {
+    padding: 4px 5px;
+    margin: 2px;
+    background-image: none;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+}
+
+#workspaces button:hover {
+    transition-duration: 400ms;
+    background: rgba(100, 100, 100, 1.0);
+}
+
+#workspaces button:hover label {
+    color: rgba(255, 255, 255, 1.0);
+}
+
+/*
+#workspaces button:not(.empty):not(.active):not(.visible):not(.hidden):not(.persistent) {
+    transition-duration: 400ms;
+    padding: 4px 3px;
+    font-size: 0.8em;
+}
+*/
+
+#workspaces button.active,
+#workspaces button.focused,
+#workspaces button.visible {
+    transition-duration: 500ms;
+    background-color: rgba(0, 180, 0, 1.0);
+}
+
+#workspaces button.active label,
+#workspaces button.focused label,
+#workspaces button.visible label {
+    color: rgba(0, 0, 0, 1.0);
+}
+
+tooltip {
+    background-color: rgba(0, 0, 0, 1.0);
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: rgba(0, 170, 0, 1.0);
+}
+
+#window label {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+#custom-network {
+    padding-left: 5px;
+}
+
+#battery {
+    padding-left: 5px;
+}
+
+#custom-bt {
+    padding-left: 5px;
+}
+
+#custom-brightness {
+    padding-left: 5px;
+}
+
+#clock {
+    padding-left: 5px;
+    padding-right: 20px;
+}
+
+#custom-cpu {
+    padding-right: 0;
+}
+
+#custom-mem {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#custom-temp {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#custom-sepr {
+    padding-left: 0;
+    padding-right: 0;
+}

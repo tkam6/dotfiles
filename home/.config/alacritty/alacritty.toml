@@ -1,0 +1,62 @@
+[env]
+ALACRITTYPROMPT = "true"
+
+[window]
+dimensions = { columns = 100, lines = 25 }
+padding = { x = 5, y = 5 }
+dynamic_title = true
+resize_increments = true
+
+[font]
+normal = { family = "IosevkaTerm Nerd Font Mono" }
+offset = { x = 0, y = 0 }
+size = 18
+
+[scrolling]
+history = 50000
+multiplier = 3
+
+[cursor]
+style = { shape = "Block", blinking = "Always" }
+blink_interval = 150
+
+[mouse]
+hide_when_typing = true
+bindings = [
+    { mouse = "Middle", action = "ExpandSelection" }
+]
+
+[keyboard]
+bindings = [
+    { key = "0", mods = "Control", action = "ResetFontSize" }, { key = "+", mods = "Control", action = "IncreaseFontSize" }, { key = "-", mods = "Control", action = "DecreaseFontSize" },
+    { key = "ArrowUp", mods = "Shift", action = "ScrollLineUp" },
+    { key = "ArrowDown", mods = "Shift", action = "ScrollLineDown" },
+    # For programs like Tmux
+    { key = "ArrowUp", mods = "Alt", chars = "\u001b[1;3A" },
+    { key = "ArrowDown", mods = "Alt", chars = "\u001b[1;3B" },
+    { key = "PageUp", action = "ScrollPageUp" },
+    { key = "PageDown", action = "ScrollPageDown" },
+    { key = "F11", action = "ToggleFullscreen" },
+    { key = "Enter", mods = "Control|Shift", action = "CreateNewWindow" },
+    { key = "Enter", mods = "Control|Shift|Alt", action = "SpawnNewInstance" },
+    { key = "Enter", mods = "Alt", action = "ToggleFullscreen" },
+    { key = "NumpadEnter", chars = "\n" }
+]
+
+[general]
+live_config_reload = true
+# import = ["./themes/themes/terminal_app.toml"]
+# import = ["./themes/themes/pastel_dark.toml"]
+import = ["./themes/themes/github_dark_high_contrast.toml"]
+
+[[hints.enabled]]
+command = "xdg-open"
+hyperlinks = true
+post_processing = true
+persist = false
+binding = { key = "O", mods = "Control|Shift" }
+mouse = { mods = "Control", enabled = true }
+regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)[^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`\\\\]+"
+
+# [bell]
+# duration = 300

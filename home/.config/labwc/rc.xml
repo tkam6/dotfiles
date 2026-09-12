@@ -1,0 +1,124 @@
+<?xml version="1.0" ?>
+<labwc_config>
+  <keyboard>
+    <!-- <default /> -->
+    <!-- The W- prefix refers to the Super key -->
+
+    <!-- Terminal -->
+    <keybind key="W-q">
+      <action name="Execute" command="lab-sensible-terminal" />
+    </keybind>
+
+    <!-- Launcher -->
+    <keybind key="W-r">
+      <action name="Execute" command="rofi -show run" />
+    </keybind>
+
+    <keybind key="W-t">
+      <action name="Execute" command="rofi -show drun" />
+    </keybind>
+
+    <!-- Close window -->
+    <keybind key="W-c">
+      <action name="Close" />
+    </keybind>
+    <keybind key="W-S-c">
+      <action name="Kill" />
+    </keybind>
+    <!-- <keybind key="A-F4">
+      <action name="Close" />
+    </keybind> -->
+
+    <!-- Toggle maximise -->
+    <keybind key="W-x">
+      <action name="ToggleMaximize" />
+    </keybind>
+
+    <keyboard key="W-z">
+      <action name="Iconify" />
+    </keyboard>
+
+    <!-- Fullscreen -->
+    <keybind key="W-f">
+      <action name="ToggleFullscreen" />
+    </keybind>
+
+    <!-- Application menu -->
+    <keybind key="W-Space">
+      <action name="ShowMenu" menu="client-menu" atCursor="yes" />
+    </keybind>
+
+    <!-- Snap to edges -->
+    <keybind key="W-C-Up">
+      <action name="SnapToEdge" direction="up" combine="yes" />
+    </keybind>
+    <keybind key="W-C-Down">
+      <action name="SnapToEdge" direction="down" combine="yes" />
+    </keybind>
+    <keybind key="W-C-Left">
+      <action name="SnapToEdge" direction="left" combine="yes" />
+    </keybind>
+    <keybind key="W-C-Right">
+      <action name="SnapToEdge" direction="right" combine="yes" />
+    </keybind>
+
+    <!-- Application switcher -->
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+    <keybind key="A-S-Tab">
+      <action name="PreviousWindow" />
+    </keybind>
+
+    <!-- Magnifier -->
+    <keybind key="W-Backspace">
+      <action name="ToggleMagnify" />
+    </keybind>
+    <keybind key="W-Equal">
+      <action name="ZoomIn" />
+    </keybind>
+    <keybind key="W-Minus">
+      <action name="ZoomOut" />
+    </keybind>
+
+    <!-- Volume buttons -->
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute" command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%-" />
+    </keybind>
+
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute" command="wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+" />
+    </keybind>
+
+    <keybind key="XF86_AudioMute">
+      <action name="Execute" command="wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" />
+    </keybind>
+
+    <!-- Brightness buttons -->
+    <keybind key="XF86_MonBrightnessUp">
+      <action name="Execute" command="brightnessctl -e2 set 5%+" />
+    </keybind>
+
+    <keybind key="XF86_MonBrightnessDown">
+      <action name="Execute" command="brightnessctl -e2 --min-value=1000 set 5%-" />
+    </keybind>
+
+    <!-- Keyboard repeat delay and rate -->
+    <repeatDelay>250</repeatDelay>
+    <repeatRate>50</repeatRate>
+
+    <!-- Layout scope (global or per window) -->
+    <layoutScope>global</layoutScope>
+
+    <!-- Turn on numlock -->
+    <numlock>on</numlock>
+
+  </keyboard>
+
+  <libinput>
+  <device category="touchpad">
+    <!-- Reverse scrolling direction -->
+    <sendEvents>disabled</sendEvents>
+  </device>
+  </libinput>
+</labwc_config>

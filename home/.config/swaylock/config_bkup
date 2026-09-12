@@ -1,0 +1,18 @@
+ignore-empty-password
+show-failed-attempts
+daemonize
+show-keyboard-layout
+indicator-caps-lock
+image=/home/vallu/personal/wallpapers/pure_vessel.png
+scaling=fill
+font=Nunito
+font-size=20
+indicator-radius=100
+indicator-thickness=20
+
+clock
+timestr=%R
+datestr=%a, %e of %B
+
+screenshots
+fade-in=0.2
