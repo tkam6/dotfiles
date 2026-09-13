@@ -24,22 +24,35 @@ vim.pack.add({
 
 
 -- LSP CONFIG
-vim.lsp.config("basedpyright", {
-    settings = {
-        basedpyright = {
-            analysis = {
-                typeCheckingMode = "standard",      -- off, basic, standard, strict
-                diagnosticMode = "openFilesOnly",
-                useLibraryCodeForTypes = true,
-                autoSearchPaths = true,
-            },
-        },
-    },
+vim.lsp.config("ruff", {
+    init_options = {
+        settings = {
+            configuration = "~/.config/ruff/ruff.toml",
+            line_length = 79,
+            lint = {
+                preview = true,
+            }
+        }
+    }
 })
-vim.lsp.enable("basedpyright")
-vim.diagnostic.config({
-    virtual_text = false,
-})
+
+vim.lsp.enable("ruff")
+-- vim.lsp.config("basedpyright", {
+--     settings = {
+--         basedpyright = {
+--             analysis = {
+--                 typeCheckingMode = "standard",      -- off, basic, standard, strict
+--                 diagnosticMode = "openFilesOnly",
+--                 useLibraryCodeForTypes = true,
+--                 autoSearchPaths = true,
+--             },
+--         },
+--     },
+-- })
+-- vim.lsp.enable("basedpyright")
+-- vim.diagnostic.config({
+--     virtual_text = false,
+-- })
 -- toggle floating window
 local diagnostic_float
 vim.keymap.set("n", "<leader>e", function()

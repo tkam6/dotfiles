@@ -44,10 +44,8 @@ bindings = [
 ]
 
 [general]
-live_config_reload = true
-# import = ["./themes/themes/terminal_app.toml"]
-# import = ["./themes/themes/pastel_dark.toml"]
-import = ["./themes/themes/github_dark_high_contrast.toml"]
+live_config_reload = false
+import = ["./themes/themes/my_theme.toml"]
 
 [[hints.enabled]]
 command = "xdg-open"

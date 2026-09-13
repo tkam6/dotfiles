@@ -22,7 +22,7 @@ trap zsh_exit_message EXIT
 alias anews='xdg-open https://archlinux.org/news &>/dev/null'
 alias grep='grep --color=auto'
 alias help='run-help'
-alias ls='ls --color=auto'
+alias ls='ls -F --color=auto'
 alias md='mkdir'
 alias neofetch='fastfetch'
 alias py='python3'
