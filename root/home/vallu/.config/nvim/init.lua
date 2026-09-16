@@ -20,6 +20,8 @@ vim.pack.add({
     { src = "https://github.com/EdenEast/nightfox.nvim" },
     { src = "https://github.com/rktjmp/lush.nvim" },
     { src = "https://github.com/karb94/neoscroll.nvim" },
+    { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
+    -- { src = "https://github.com/preservim/vim-indent-guides" },
 })
 
 
@@ -53,6 +55,7 @@ vim.lsp.enable("ruff")
 -- vim.diagnostic.config({
 --     virtual_text = false,
 -- })
+
 -- toggle floating window
 local diagnostic_float
 vim.keymap.set("n", "<leader>e", function()
@@ -112,6 +115,14 @@ require("oil").setup({
     },
     view_options = { show_hidden = true },
 })
+vim.keymap.set("n", "-", function()
+    vim.cmd("tabe")
+    require("oil").open()
+end)
+vim.keymap.set("n", "_", function()
+    vim.cmd("vsp")
+    require("oil").open()
+end)
 
 ---------------------
 --- COLOUR SCHEME ---
@@ -157,6 +168,46 @@ require('nightfox').setup({
 ----------------
 -- default scroll direction for completions
 vim.g.SuperTabDefaultCompletionType = "<c-n>"
+
+
+---------------------
+--- INDENT GUIDES ---
+---------------------
+local highlight = {
+    "RainbowRed",
+    "RainbowYellow",
+    "RainbowBlue",
+    "RainbowOrange",
+    "RainbowGreen",
+    "RainbowViolet",
+    "RainbowCyan",
+}
+local hooks = require("ibl.hooks")
+-- create the highlight groups in the highlight setup hook, so they are reset
+-- every time the colorscheme changes
+hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+    vim.api.nvim_set_hl(0, "RainbowRed",    { fg = "#703C35" })
+    vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#75601B" })
+    vim.api.nvim_set_hl(0, "RainbowBlue",   { fg = "#214F8F" })
+    vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#814A26" })
+    vim.api.nvim_set_hl(0, "RainbowGreen",  { fg = "#387319" })
+    vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#734886" })
+    vim.api.nvim_set_hl(0, "RainbowCyan",   { fg = "#167682" })
+end)
+require("ibl").setup({
+    indent = {
+        highlight = highlight,
+        -- char = "┊",
+        char = "│",
+    },
+})
+-- For first-level spaces and tabs
+hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
+-----
+-- vim.g.indent_guides_enable_on_vim_startup = 1
+-- vim.g.indent_guides_start_level = 2
+-- vim.g.indent_guides_guide_size = 1
 
 
 ------------

@@ -84,7 +84,6 @@ map <F1>  :tabp<CR>
 map <F2>  :tabn<CR>
 map <F3>  <nop>
 map <F4>  :help<CR>
-map <C-s> :Oil<CR>
 " inoremap <F1> <Esc>:tabp<CR>i
 " inoremap <F2> <Esc>:tabn<CR>i
 inoremap <F1> <C-o>:tabp<CR>

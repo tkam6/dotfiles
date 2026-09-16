@@ -16,6 +16,10 @@
       "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "indent-blankline.nvim": {
+      "rev": "f1e186e44d3b7f9ae918008e2c28ce37c6023d2d",
+      "src": "https://github.com/lukas-reineke/indent-blankline.nvim"
+    },
     "jedi-vim": {
       "rev": "a33071af6b3cf2399bc4631e0aa265901e1cf99e",
       "src": "https://github.com/davidhalter/jedi-vim"
@@ -71,6 +75,10 @@
     "tabby.nvim": {
       "rev": "3c130e1fcb598ce39a9c292847e32d7c3987cf11",
       "src": "https://github.com/nanozuki/tabby.nvim"
+    },
+    "vim-indent-guides": {
+      "rev": "a1e1390c0136e63e813d051de2003bf0ee18ae30",
+      "src": "https://github.com/preservim/vim-indent-guides"
     },
     "vim-vinegar": {
       "rev": "bb1bcddf43cfebe05eb565a84ab069b357d0b3d6",
