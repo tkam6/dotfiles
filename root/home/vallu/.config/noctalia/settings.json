@@ -81,11 +81,6 @@
             ],
             "left": [
                 {
-                    "defaultSettings": {
-                    },
-                    "id": "plugin:tb_fullscreen_button_v4"
-                },
-                {
                     "characterCount": 2,
                     "colorizeIcons": false,
                     "emptyColor": "secondary",
@@ -100,7 +95,7 @@
                     "labelMode": "index",
                     "occupiedColor": "secondary",
                     "pillSize": 0.5,
-                    "showApplications": true,
+                    "showApplications": false,
                     "showApplicationsHover": false,
                     "showBadge": true,
                     "showLabelsOnlyWhenOccupied": true,

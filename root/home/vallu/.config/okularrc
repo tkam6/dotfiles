@@ -14,26 +14,26 @@ MenuBar=Disabled
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/srfc_engg_and_coating_tech_till_midsem.pdf
-File10[$e]=/d/NIT/7_sem/carbon_nanostructures/Industrial_oriented_approach_on_fullerene_preparation_methods.pdf
-File2[$e]=$HOME/Downloads/srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
-File3[$e]=$HOME/Downloads/apaar.pdf
-File4[$e]=$HOME/Downloads/ME4329E Surface Engineering and coating technology 24-08-2027_.pdf
-File5[$e]=$HOME/Downloads/GATE2027-IB.pdf
-File6[$e]=$HOME/Downloads/archbook.pdf
-File7[$e]=/d/NIT/7_sem/srfc_engg/srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
-File8[$e]=$HOME/Downloads/tacticalphysique.pdf
-File9[$e]=/d/NIT/7_sem/carbon_nanostructures/glassy_carbon.pdf
-Name1[$e]=srfc_engg_and_coating_tech_till_midsem.pdf
-Name10[$e]=Industrial_oriented_approach_on_fullerene_preparation_methods.pdf
-Name2[$e]=srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
-Name3[$e]=apaar.pdf
-Name4[$e]=ME4329E Surface Engineering and coating technology 24-08-2027_.pdf
-Name5[$e]=GATE2027-IB.pdf
-Name6[$e]=archbook.pdf
-Name7[$e]=srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
-Name8[$e]=tacticalphysique.pdf
-Name9[$e]=glassy_carbon.pdf
+File1[$e]=$HOME/Downloads/apaar.pdf
+File10[$e]=$HOME/Downloads/GATE2027-IB.pdf
+File2[$e]=$HOME/Downloads/ME4329E Surface Engineering and coating technology 24-08-2027_.pdf
+File3[$e]=$HOME/Downloads/archbook.pdf
+File4[$e]=/d/NIT/7_sem/srfc_engg/srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
+File5[$e]=$HOME/Downloads/tacticalphysique.pdf
+File6[$e]=/d/NIT/7_sem/carbon_nanostructures/glassy_carbon.pdf
+File7[$e]=/d/NIT/7_sem/carbon_nanostructures/Industrial_oriented_approach_on_fullerene_preparation_methods.pdf
+File8[$e]=$HOME/Downloads/esmm1444.pdf
+File9[$e]=$HOME/Downloads/Effective-C-An-Introduction-to-Professional-C-Programming.pdf
+Name1[$e]=apaar.pdf
+Name10[$e]=GATE2027-IB.pdf
+Name2[$e]=ME4329E Surface Engineering and coating technology 24-08-2027_.pdf
+Name3[$e]=archbook.pdf
+Name4[$e]=srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
+Name5[$e]=tacticalphysique.pdf
+Name6[$e]=glassy_carbon.pdf
+Name7[$e]=Industrial_oriented_approach_on_fullerene_preparation_methods.pdf
+Name8[$e]=esmm1444.pdf
+Name9[$e]=Effective-C-An-Introduction-to-Professional-C-Programming.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

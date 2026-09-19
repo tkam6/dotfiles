@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "ale": {
+      "rev": "e1789bc54483d76ac9ddb40b633d1645c8281914",
+      "src": "https://github.com/dense-analysis/ale"
+    },
     "basedpyright": {
       "rev": "7f4f43cc4a3abd980dbc988a551a06cb2c41948f",
       "src": "https://github.com/detachhead/basedpyright"

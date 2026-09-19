@@ -123,6 +123,9 @@ vim.keymap.set("n", "_", function()
     vim.cmd("vsp")
     require("oil").open()
 end)
+vim.keymap.set("n", "+", function()
+    require("oil").open()
+end)
 
 ---------------------
 --- COLOUR SCHEME ---
