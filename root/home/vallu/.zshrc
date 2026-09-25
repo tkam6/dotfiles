@@ -2,6 +2,14 @@
 unalias run-help
 autoload run-help
 
+
+##### git info
+# Load version control information
+autoload -Uz vcs_info
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '%b'
+
+
 ##### KEYBINDS
 revert-line() { while zle .undo; do done }
 zle -N revert-line
@@ -18,10 +26,12 @@ bindkey '^[^?' backward-kill-dir
 function zsh_exit_message() { echo "bye" }
 trap zsh_exit_message EXIT
 
+
 ##### ALIASES
 alias anews='xdg-open https://archlinux.org/news &>/dev/null'
 alias grep='grep --color=auto'
 alias help='run-help'
+alias less='less -N'
 alias ls='ls -Fh --color=auto'
 alias md='mkdir'
 alias neofetch='fastfetch'
@@ -33,6 +43,7 @@ alias start='xdg-open'
 alias steal='git clone'
 alias yeet='git push'
 alias yoink='git pull'
+
 
 ##### AUTOLOAD
 autoload -U colors && colors
@@ -83,9 +94,17 @@ if [[ -n "$SSH_CONNECTION" ]]; then
 else
     _CONNECTION_TYP="local"
 fi
+
 preexec() { CMD_START_TIME=$EPOCHREALTIME }
+
 precmd()
 {
+    vcs_info
+    _GIT_BRANCH=""
+    if [[ -n "$vcs_info_msg_0_" ]]; then
+        _GIT_BRANCH=" B:%B%F{cyan}${vcs_info_msg_0_}%f%b"
+    fi
+
     _LAST_CMD_RET_CODE=$?
     # Last command exit status
     if [[ $_LAST_CMD_RET_CODE -eq 0 ]]; then
@@ -95,7 +114,7 @@ precmd()
     fi
     # Is it a virtual env?
     if [[ -n "$VIRTUAL_ENV" ]]; then
-        _VIRT_ENV="%F{magenta}V:${VIRTUAL_ENV:t}%f "
+        _VIRT_ENV="V:%F{magenta}${VIRTUAL_ENV:t}%f "
         _ARROW_LN_TOP="%F{magenta}┌%f"
         _ARROW_PS1="%F{magenta}└─❯%f"
         _ARROW_PS2="%F{magenta}••❯%f"
@@ -120,7 +139,7 @@ precmd()
 # Old, big prompt
 # PS1=$'${_ARROW_LN_TOP} ${_PROMPT_BULLET} \e[2mzsh${ZSH_VERSION}\e[0m p:%U%#%u j:%U%j%u \e[2mt:${CMD_DURATION}s\e[0m ${_VIRT_ENV}${_CONNECTION_TYP}:%F{yellow}%n%f@%F{blue}%M%f %B%F{green}${_PTH}%f%b
 # ${_ARROW_PS1} '
-PS1=$'${_ARROW_LN_TOP} ${_PROMPT_BULLET} \e[2mZ\e[0m U:%U%#%u J:%U%j%u \e[2mT:${CMD_DURATION}s\e[0m ${_VIRT_ENV}%F{yellow}%n%f@%F{blue}%M%f %B%F{green}${_PTH}%f%b
+PS1=$'${_ARROW_LN_TOP} ${_PROMPT_BULLET} \e[2mZ\e[0m U:%U%#%u J:%U%j%u \e[2mT:${CMD_DURATION}s\e[0m ${_VIRT_ENV}%F{yellow}%n%f@%F{blue}%M%f${_GIT_BRANCH}%f%b %B%F{green}${_PTH}%f%b
 ${_ARROW_PS1} '
 PS2=$'\e[2m${_ARROW_PS2}\e[0m '
 
