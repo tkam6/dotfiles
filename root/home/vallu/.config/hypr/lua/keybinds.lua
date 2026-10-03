@@ -149,3 +149,23 @@ hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd(ipc .. "bluetooth-toggle"))
 hl.bind("SUPER + space",     hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
 hl.bind("SUPER + comma",     hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 -- hl.bind("ALT + tab",         hl.dsp.exec_cmd(ipc .. "window-switcher"))
+
+
+---------------------------
+--- Ambxst keybinds
+---------------------------
+-- hl.bind("SUPER + V", hl.dsp.exec_cmd("ambxst run clipboard"))
+-- hl.bind("SUPER + N", hl.dsp.exec_cmd("ambxst run notes"))
+-- hl.bind("SUPER + Super_L", hl.dsp.exec_cmd("ambxst run launcher"), { release = true })
+-- hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd("/home/vallu/.config/hypr/scripts/toggle_bluetooth.sh"))
+-- hl.bind("SUPER + SHIFT + D", hl.dsp.exec_cmd("ambxst run dashboard"))
+-- hl.bind("SUPER + SHIFT + P", hl.dsp.exec_cmd("ambxst reload"))
+-- hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd("/home/vallu/.config/hypr/scripts/toggle_wifi.sh"))
+-- hl.bind("SUPER + PERIOD", hl.dsp.exec_cmd("ambxst run emoji"))
+-- hl.bind("SUPER + COMMA", hl.dsp.exec_cmd("ambxst run wallpapers"))
+
+
+----------------------------
+--- Caelestia keybinds
+----------------------------
+hl.bind("SUPER + space", hl.dsp.global("caelestia:launcher"), { release = true })

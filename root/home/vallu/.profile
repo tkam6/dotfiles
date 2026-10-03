@@ -11,12 +11,15 @@ export PATH="$PATH:$HOME/bin"
 # all paths I need in PATH
 PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/usr/local/games:/usr/games"
 # private bin (~/bin/) if it exists
-if [ -d "$HOME/bin" ] ; then
+if [ -d "$HOME/bin" ]; then
     PATH="$HOME/bin:$PATH"
 fi
 # private local/bin (~/.local/bin/) if it exists
-if [ -d "$HOME/.local/bin" ] ; then
+if [ -d "$HOME/.local/bin" ]; then
     PATH="$HOME/.local/bin:$PATH"
+fi
+if [ -d "$HOME/.nix-profile/bin" ]; then
+    PATH="$PATH:$HOME/.nix-profile/bin"
 fi
 export PATH
 

@@ -11,6 +11,12 @@ resize_increments = true
 normal = { family = "IosevkaTerm Nerd Font Mono" }
 offset = { x = 0, y = 0 }
 size = 18
+##### square cells
+# [font]
+# size = 11.0
+# offset = { x = 2, y = 0 }
+# glyph_offset = { x = 0, y = 0 }
+#####
 
 [scrolling]
 history = 50000

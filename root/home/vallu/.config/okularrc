@@ -14,26 +14,26 @@ MenuBar=Disabled
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/archbook.pdf
-File10[$e]=$HOME/Downloads/ApplicationForm.pdf
-File2[$e]=/d/NIT/7_sem/srfc_engg/srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
-File3[$e]=$HOME/Downloads/tacticalphysique.pdf
-File4[$e]=/d/NIT/7_sem/carbon_nanostructures/glassy_carbon.pdf
-File5[$e]=/d/NIT/7_sem/carbon_nanostructures/Industrial_oriented_approach_on_fullerene_preparation_methods.pdf
-File6[$e]=$HOME/Downloads/esmm1444.pdf
-File7[$e]=$HOME/Downloads/Effective-C-An-Introduction-to-Professional-C-Programming.pdf
-File8[$e]=$HOME/Downloads/gate_view_appln.pdf
-File9[$e]=$HOME/Downloads/GATE2027-IB.pdf
-Name1[$e]=archbook.pdf
-Name10[$e]=ApplicationForm.pdf
-Name2[$e]=srfc-engg-and-coating-tech_till-midsem_2026-09-10_12-16.pdf
-Name3[$e]=tacticalphysique.pdf
-Name4[$e]=glassy_carbon.pdf
-Name5[$e]=Industrial_oriented_approach_on_fullerene_preparation_methods.pdf
-Name6[$e]=esmm1444.pdf
-Name7[$e]=Effective-C-An-Introduction-to-Professional-C-Programming.pdf
-Name8[$e]=gate_view_appln.pdf
-Name9[$e]=GATE2027-IB.pdf
+File1[$e]=$HOME/Downloads/gate_view_appln.pdf
+File10[$e]=$HOME/Downloads/FontPatcher/readme.md
+File2[$e]=$HOME/Downloads/ApplicationForm.pdf
+File3[$e]=$HOME/Downloads/GATE2027-IB.pdf
+File4[$e]=$HOME/Downloads/esmm1444.pdf
+File5[$e]=$HOME/Downloads/Effective-C-An-Introduction-to-Professional-C-Programming.pdf
+File6[$e]=/mnt/win_ssd/Users/vallu/Downloads/s41467-019-14153-7.pdf
+File7[$e]=/c/Users/vallu/Downloads/1-s2.0-S1751616120305324-main.pdf
+File8[$e]=/c/Users/vallu/Downloads/s41467-019-14153-7.pdf
+File9[$e]=/c/Users/vallu/Downloads/s11661-018-4873-z.pdf
+Name1[$e]=gate_view_appln.pdf
+Name10[$e]=readme.md
+Name2[$e]=ApplicationForm.pdf
+Name3[$e]=GATE2027-IB.pdf
+Name4[$e]=esmm1444.pdf
+Name5[$e]=Effective-C-An-Introduction-to-Professional-C-Programming.pdf
+Name6[$e]=s41467-019-14153-7.pdf
+Name7[$e]=1-s2.0-S1751616120305324-main.pdf
+Name8[$e]=s41467-019-14153-7.pdf
+Name9[$e]=s11661-018-4873-z.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

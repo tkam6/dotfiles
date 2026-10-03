@@ -123,7 +123,7 @@ if hl.plugin.hyprglass then
 
     hg.config({
         default_theme = "dark",
-        default_preset = "glass",
+        default_preset = "apple",
         tint_color = 0x8899aa22,
 
         brightness = 0.9,

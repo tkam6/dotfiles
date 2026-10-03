@@ -75,7 +75,13 @@
             "key": "cpu",
             "type": "cpu",
             "keyColor": "33",
-            "format": "{cores-physical}-core @ {freq-max}"
+            "format": "{cores-physical}-core ({cores-logical})"
+        },
+        {
+            "key": "clock",
+            "type": "cpu",
+            "keyColor": "33",
+            "format": "{freq-base} / {freq-max}"
         },
         {
             "key": "memory",

@@ -1,3 +1,4 @@
+-- loadfile(os.getenv("HOME") .. "/.local/share/ambxst/hyprland.lua")()
 -- source files from lua/
 require("lua.animations")
 require("lua.appearance")
