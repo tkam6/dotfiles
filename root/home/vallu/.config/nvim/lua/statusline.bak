@@ -1,0 +1,44 @@
+------------
+--- MODE ---
+------------
+local mode_map = {
+    -- normal
+    n         = "•",
+    no        = "•",
+    nov       = "•",
+    noV       = "•",
+    ["no\22"] = "•",
+    niI       = "•",
+    niR       = "•",
+    niV       = "•",
+    -- insert
+    i         = "+",
+    ic        = "+",
+    ix        = "+",
+    -- visual
+    v         = "~",
+    vs        = "~",
+    V         = "-",
+    Vs        = "-",
+    ["\22"]   = "|",
+    ["\22s"]  = "|",
+    -- replace
+    R         = "R",
+    Rc        = "R",
+    Rx        = "R",
+    Rv        = "V-R",
+    s         = "S",
+    S         = "S-L",
+    ["\19"]   = "S-B",
+    -- command and ex mode
+    c         = ":",
+    cv        = ">",
+    ce        = ">",
+    -- prompt
+    r         = "?",
+    rm        = "...",
+    ["r?"]    = "?",
+    -- shell mode and terminal
+    ["!"]     = "!",
+    t         = "T",
+}

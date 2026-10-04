@@ -10,6 +10,7 @@ vim.api.nvim_set_hl(0, "StatusLineModeInsert",       { fg = "#98e897", bold = tr
 vim.api.nvim_set_hl(0, "StatusLineModeVisual",       { fg = "#ff9fff", bold = true })
 vim.api.nvim_set_hl(0, "StatusLineModeCommand",      { fg = "#e6e600", bold = true })
 vim.api.nvim_set_hl(0, "StatusLineModeReplace",      { fg = "#cf2f2f", bold = true })
+vim.api.nvim_set_hl(0, "StatusLineItemType",         { fg = "#ffffff", bold = true })
 vim.api.nvim_set_hl(0, "StatusLineFilepathActive",   { fg = "#98e879", bold = true })
 vim.api.nvim_set_hl(0, "StatusLineFilepathInactive", { fg = "#ffffff", bold = true })
 vim.api.nvim_set_hl(0, "StatusLineOilPath",          { fg = "#61affa", bold = true })
@@ -36,49 +37,49 @@ local mode_hl = {
 
 local mode_map = {
     -- normal
-    n         = "•",
-    no        = "•",
-    nov       = "•",
-    noV       = "•",
-    ["no\22"] = "•",
-    niI       = "•",
-    niR       = "•",
-    niV       = "•",
+    n         = "NOR",
+    no        = "NOR",
+    nov       = "NOR",
+    noV       = "NOR",
+    ["no\22"] = "NOR",
+    niI       = "NOR",
+    niR       = "NOR",
+    niV       = "NOR",
     -- insert
-    i         = "+",
-    ic        = "+",
-    ix        = "+",
+    i         = "INS",
+    ic        = "INS",
+    ix        = "INS",
     -- visual
-    v         = "~",
-    vs        = "~",
-    V         = "-",
-    Vs        = "-",
-    ["\22"]   = "|",
-    ["\22s"]  = "|",
+    v         = "VIS",
+    vs        = "VIS",
+    V         = "V-L",
+    Vs        = "V-L",
+    ["\22"]   = "V-B",
+    ["\22s"]  = "V-B",
     -- replace
-    R         = "R",
-    Rc        = "R",
-    Rx        = "R",
+    R         = "REP",
+    Rc        = "REP",
+    Rx        = "REP",
     Rv        = "V-R",
     s         = "S",
     S         = "S-L",
     ["\19"]   = "S-B",
     -- command and ex mode
-    c         = ":",
-    cv        = ">",
-    ce        = ">",
+    c         = "CMD",
+    cv        = "...",
+    ce        = "...",
     -- prompt
-    r         = "?",
+    r         = "?>>",
     rm        = "...",
-    ["r?"]    = "?",
+    ["r?"]    = "?>>",
     -- shell mode and terminal
-    ["!"]     = "!",
-    t         = "T",
+    ["!"]     = "SHL",
+    t         = "TER",
 }
 
 local function mode()
     local m = vim.fn.mode()
-    local label = "[" .. (mode_map[m] or m) .. "]"
+    local label = mode_map[m] or m
     local group = mode_hl[m:sub(1, 1)] or "StatusLine"
     return hl(group, label)
 end
@@ -122,10 +123,11 @@ local function file_state()
 end
 
 local function filepath()
-    local hl_group
     local path
     local header
     local state = file_state()
+    local hl_group = "StatusLineFilepathActive"
+    local hl_group_type = "StatusLineItemType"
     if state ~= "" then state = " {" .. state .. "}" end
 
     if vim.bo.filetype == "oil" then
@@ -133,10 +135,9 @@ local function filepath()
         hl_group = "StatusLineOilPath"
         header = "dir"
     elseif vim.fn.expand("%") == "" then
-        return { "fl", hl("StatusLineFilepathActive", "[buf]"), state }
+        return { hl(hl_group_type, "fl"), hl(hl_group, "[buf]"), state }
     else
         path = vim.fn.expand("%:p")
-        hl_group = "StatusLineFilepathActive"
         header = "fl"
     end
 
@@ -147,7 +148,7 @@ local function filepath()
     else
         path = vim.fn.fnamemodify(path, ":~")
     end
-    return { header, hl(hl_group, path), state }
+    return { hl(hl_group_type, header), hl(hl_group, path), state }
 end
 
 ------------------
@@ -242,8 +243,8 @@ local function curpos()
     local row_len = #tostring(vim.api.nvim_buf_line_count(0))
     local col_len = #tostring(vim.fn.col("$"))
     return {
-        hl("StatusLineCurposRow", string.format("%" .. row_len .. "d", row)),
-        hl("StatusLineCurposCol", string.format("%" .. col_len .. "d", col + 1)),
+        hl("StatusLineCurposRow", string.format("%d", row)),
+        hl("StatusLineCurposCol", string.format("%d", col + 1)),
     }
 end
 
@@ -251,7 +252,7 @@ local function filepos()
     return hl(
         "StatusLineFilepos",
         string.format(
-            "%3d%%%%",
+            "%d%%%%",
             math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
         )
     )
@@ -263,18 +264,20 @@ end
 ------------------
 status_ln = {}
 
+-- ⣾⣽⣻⢿⡿⣟⣯⣷
+
 function status_ln.active()
     local type, path, state  = unpack(filepath())
     local row, col = unpack(curpos())
     return table.concat {
         string.format(
-            "mode=%s %s %s=%s%s %s br=%s",
+            "[%s] ⣾⣷ (%s) %s%s @%s",
             mode(),
-            spinner1(),
+            -- spinner1(),
             type,
             path,
             state,
-            spinner2(),
+            -- spinner2(),
             git()
         ),
         "%=",
