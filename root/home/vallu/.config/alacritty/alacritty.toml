@@ -51,7 +51,7 @@ bindings = [
 
 [general]
 live_config_reload = false
-import = ["./themes/themes/my_theme.toml"]
+import = ["./themes/my_theme.toml"]
 
 [[hints.enabled]]
 command = "xdg-open"

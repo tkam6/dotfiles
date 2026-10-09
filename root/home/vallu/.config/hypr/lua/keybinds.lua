@@ -31,6 +31,7 @@ hl.bind("SUPER + T", hl.dsp.exec_cmd(menu_run))
 hl.bind("SUPER + X", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
 hl.bind("SUPER + F12",           hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind("SUPER + backslash",     hl.dsp.window.float({ action = "toggle" }))
+hl.bind("SUPER + period",        hl.dsp.exec_cmd("skwd-wall-v2"))
 -- why the hell is it called "grave"?
 -- hl.bind("SUPER + grave",         hl.dsp.exec_cmd("skwd-wall-v2"))
 hl.bind("SUPER + SHIFT + C",     hl.dsp.window.kill())

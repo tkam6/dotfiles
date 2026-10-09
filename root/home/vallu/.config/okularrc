@@ -14,26 +14,26 @@ MenuBar=Disabled
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/gate_view_appln.pdf
-File10[$e]=$HOME/Downloads/FontPatcher/readme.md
-File2[$e]=$HOME/Downloads/ApplicationForm.pdf
-File3[$e]=$HOME/Downloads/GATE2027-IB.pdf
-File4[$e]=$HOME/Downloads/esmm1444.pdf
-File5[$e]=$HOME/Downloads/Effective-C-An-Introduction-to-Professional-C-Programming.pdf
-File6[$e]=/mnt/win_ssd/Users/vallu/Downloads/s41467-019-14153-7.pdf
-File7[$e]=/c/Users/vallu/Downloads/1-s2.0-S1751616120305324-main.pdf
-File8[$e]=/c/Users/vallu/Downloads/s41467-019-14153-7.pdf
-File9[$e]=/c/Users/vallu/Downloads/s11661-018-4873-z.pdf
-Name1[$e]=gate_view_appln.pdf
-Name10[$e]=readme.md
-Name2[$e]=ApplicationForm.pdf
-Name3[$e]=GATE2027-IB.pdf
-Name4[$e]=esmm1444.pdf
-Name5[$e]=Effective-C-An-Introduction-to-Professional-C-Programming.pdf
-Name6[$e]=s41467-019-14153-7.pdf
-Name7[$e]=1-s2.0-S1751616120305324-main.pdf
-Name8[$e]=s41467-019-14153-7.pdf
-Name9[$e]=s11661-018-4873-z.pdf
+File1[$e]=$HOME/Downloads/esmm1444.pdf
+File10[$e]=$HOME/Downloads/RESUME_THIRUVALLUVAN.PDF
+File2[$e]=$HOME/Downloads/Effective-C-An-Introduction-to-Professional-C-Programming.pdf
+File3[$e]=/mnt/win_ssd/Users/vallu/Downloads/s41467-019-14153-7.pdf
+File4[$e]=/c/Users/vallu/Downloads/1-s2.0-S1751616120305324-main.pdf
+File5[$e]=/c/Users/vallu/Downloads/s41467-019-14153-7.pdf
+File6[$e]=/c/Users/vallu/Downloads/s11661-018-4873-z.pdf
+File7[$e]=$HOME/Downloads/FontPatcher/readme.md
+File8[$e]=$HOME/Downloads/func-mtrls_midsem-marks.pdf
+File9[$e]=$HOME/Downloads/RESUME_THIRUVALLUVAN.pdf
+Name1[$e]=esmm1444.pdf
+Name10[$e]=RESUME_THIRUVALLUVAN.PDF
+Name2[$e]=Effective-C-An-Introduction-to-Professional-C-Programming.pdf
+Name3[$e]=s41467-019-14153-7.pdf
+Name4[$e]=1-s2.0-S1751616120305324-main.pdf
+Name5[$e]=s41467-019-14153-7.pdf
+Name6[$e]=s11661-018-4873-z.pdf
+Name7[$e]=readme.md
+Name8[$e]=func-mtrls_midsem-marks.pdf
+Name9[$e]=RESUME_THIRUVALLUVAN.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

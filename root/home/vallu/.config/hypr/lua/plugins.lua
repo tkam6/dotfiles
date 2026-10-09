@@ -177,3 +177,17 @@ if hl.plugin.hypr_edgehover then
         },
     })
 end
+
+-------------------
+---
+-------------------
+if hl.plugin.hyprliquid then
+    hl.config( {
+        plugin = {
+            hyprliquid = {
+                watch_system_color_scheme = true,
+                background_sharing = true
+            }
+        }
+    });
+end

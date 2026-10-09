@@ -202,8 +202,14 @@ local spinner2_state = new_spinner({
     '⠉ ', '⠒ ', '⠤ ', '⣀ ', ' ⣀', ' ⠤', ' ⠒', ' ⠉',
 }, 150)
 
+-- local spinner3_state = new_spinner({
+--     '⠋', '⠙', '⠸', '⠴', '⠦', '⠇', '⠋', '⠙', '⠸', '⢰', '⣠', '⣄', '⡆', '⠖', '⠲', '⢰', '⣠', '⣄', '⡆', '⠇',
+-- }, 100)
+-- local spinner3_state = new_spinner({
+--     "←", "↖", "↑", "↗", "→", "↘", "↓", "↙",
+-- }, 100)
 local spinner3_state = new_spinner({
-    '⠋', '⠙', '⠸', '⠴', '⠦', '⠇', '⠋', '⠙', '⠸', '⢰', '⣠', '⣄', '⡆', '⠖', '⠲', '⢰', '⣠', '⣄', '⡆', '⠇',
+    "     ", "•    ", "••   ", "•••  ", " ••• ", "  •••", "   ••", "    •",
 }, 100)
 
 local function spinner1()
@@ -263,8 +269,6 @@ end
 --- STATUSLINE ---
 ------------------
 status_ln = {}
-
--- ⣾⣽⣻⢿⡿⣟⣯⣷
 
 function status_ln.active()
     local type, path, state  = unpack(filepath())
