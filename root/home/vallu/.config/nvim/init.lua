@@ -19,7 +19,6 @@ vim.pack.add({
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/EdenEast/nightfox.nvim" },
     { src = "https://github.com/rktjmp/lush.nvim" },
-    { src = "https://github.com/karb94/neoscroll.nvim" },
     { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
     -- { src = "https://github.com/preservim/vim-indent-guides" },
 })
@@ -265,6 +264,7 @@ vim.keymap.set("n", "Y", "yy", { desc = "Yank whole line" })
 vim.keymap.set("n", "<leader>cv", ":vnew | r !", { desc = "Execute a external command in a vertical split" })
 vim.keymap.set("n", "<leader>ch", ":new | r !", { desc = "Execute a external command in a horizontal split" })
 vim.keymap.set("n", "<leader>ct", ":tabe | r !", { desc = "Execute a external command in a tab" })
+vim.keymap.set("t", "<leader>]", [[<C-\><C-n>]], { desc = "Come back to Neovim from terminal" })
 
 if vim.g.neovide then
     vim.o.guifont = "Iosevka Nerd Font:h18"

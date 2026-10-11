@@ -12,6 +12,10 @@
       "rev": "450e69e704279369192b4905accc49b48a13283a",
       "src": "https://github.com/justinhj/battery.nvim"
     },
+    "cinnamon.nvim": {
+      "rev": "450cb3247765fed7871b41ef4ce5fa492d834215",
+      "src": "https://github.com/declancm/cinnamon.nvim"
+    },
     "dired.nvim": {
       "rev": "7cf5ceb69a6bbea547f97397fa5310b1571eb03a",
       "src": "https://github.com/X3eRo0/dired.nvim"
