@@ -105,7 +105,7 @@ require("oil").setup({
         ["<C-l>"] = "actions.refresh",
         ["-"]     = { "actions.parent", mode = "n" },
         ["_"]     = { "actions.open_cwd", mode = "n" },
-        ["gw"]     = { "actions.cd", mode = "n" },
+        ["gw"]    = { "actions.cd", mode = "n" },
         ["gt"]    = { "actions.cd", opts = { scope = "tab" }, mode = "n" },
         ["gs"]    = { "actions.change_sort", mode = "n" },
         ["gx"]    = "actions.open_external",
@@ -114,7 +114,7 @@ require("oil").setup({
     },
     view_options = { show_hidden = true },
 })
-vim.keymap.set("n", "-", function()
+vim.keymap.set("n", "+", function()
     vim.cmd("tabe")
     require("oil").open()
 end)
@@ -122,7 +122,7 @@ vim.keymap.set("n", "_", function()
     vim.cmd("vsp")
     require("oil").open()
 end)
-vim.keymap.set("n", "+", function()
+vim.keymap.set("n", "-", function()
     require("oil").open()
 end)
 

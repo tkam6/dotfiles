@@ -4,7 +4,7 @@
 --- KEYBINDINGS ---
 -------------------
 local terminal = "alacritty"
-local fl_mgr = "nautilus"
+local fl_mgr = "dolphin"
 local fl_mgr_alt = "dolphin"
 local menu_run = "rofi -show run"
 local menu_drun = "rofi -show drun"
@@ -37,7 +37,7 @@ hl.bind("SUPER + period",        hl.dsp.exec_cmd("skwd-wall-v2"))
 hl.bind("SUPER + SHIFT + C",     hl.dsp.window.kill())
 hl.bind("SUPER + SHIFT + E",     hl.dsp.exec_cmd(fl_mgr_alt))
 hl.bind("SUPER + SHIFT + Q",     hl.dsp.exec_cmd("~/bin/gprog tmux"))
-hl.bind("CTRL + SHIFT + escape", hl.dsp.exec_cmd("kitty -e btop"))
+hl.bind("CTRL + SHIFT + escape", hl.dsp.exec_cmd(terminal .. " -e btop"))
 
 -- zoomer
 hl.bind("SUPER + equal", hl.dsp.exec_cmd("/home/vallu/.config/hypr/scripts/zoom.sh +"))
@@ -127,9 +127,9 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER + SHIFT + mouse:273", hl.dsp.window.resize({ keep_aspect_ratio = true }), { mouse = true })
 
 -- volume and brightness controls
-hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ +5%"), { locked = true })
-hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("pactl set-sink-volume @DEFAULT_SINK@ -5%"), { locked = true })
-hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("pactl set-sink-mute @DEFAULT_SINK@ toggle"), { locked = true })
+hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
+hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
 hl.bind("XF86MonBrightnessUp",   hl.dsp.exec_cmd("brightnessctl -e2 set 5%+"), { locked = true })
 hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e2 --min-value=1000 set 5%-"), { locked = true })
@@ -169,4 +169,11 @@ hl.bind("SUPER + comma",     hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 ----------------------------
 --- Caelestia keybinds
 ----------------------------
-hl.bind("SUPER + space", hl.dsp.global("caelestia:launcher"), { release = true })
+-- hl.bind("SUPER + space", hl.dsp.global("caelestia:launcher"), { release = true })
+
+
+----------------------------
+--- HYPRSPACE
+----------------------------
+hl.bind("SUPER + tab", function() hl.plugin.overview.toggle() end, { description = "Toggle Hyprspace overview" })
+hl.bind("SUPER + SHIFT + tab", function() hl.plugin.overview.toggle("all") end, { description = "Toggle Hyprspace overview on all monitors" })

@@ -249,8 +249,8 @@ local function curpos()
     local row_len = #tostring(vim.api.nvim_buf_line_count(0))
     local col_len = #tostring(vim.fn.col("$"))
     return {
-        hl("StatusLineCurposRow", string.format("%d", row)),
-        hl("StatusLineCurposCol", string.format("%d", col + 1)),
+        hl("StatusLineCurposRow", string.format("%" .. row_len .. "d", row)),
+        hl("StatusLineCurposCol", string.format("%" .. col_len .. "d", col + 1)),
     }
 end
 
@@ -258,7 +258,7 @@ local function filepos()
     return hl(
         "StatusLineFilepos",
         string.format(
-            "%d%%%%",
+            "%3d%%%%",
             math.floor(vim.api.nvim_win_get_cursor(0)[1] / vim.api.nvim_buf_line_count(0) * 100)
         )
     )

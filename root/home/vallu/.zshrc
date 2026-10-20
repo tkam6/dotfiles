@@ -29,9 +29,10 @@ trap zsh_exit_message EXIT
 
 ##### ALIASES
 alias anews='xdg-open https://archlinux.org/news &>/dev/null'
+alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias help='run-help'
-alias less='less -N'
+alias less='less -Ni'
 alias ls='ls -Fh --color=auto'
 alias md='mkdir'
 alias neofetch='fastfetch'

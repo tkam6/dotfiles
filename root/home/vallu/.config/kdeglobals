@@ -1,0 +1,14 @@
+[Icons]
+Theme=Reversal
+
+[KDE]
+ShowDeleteCommand=true
+widgetStyle=qt6ct-style
+
+[PreviewSettings]
+EnableRemoteFolderThumbnail=false
+MaximumRemoteSize=0
+MaximumSize=10485760
+
+[UiSettings]
+ColorScheme=Darkly

@@ -26,3 +26,6 @@ export PATH
 export EDITOR="/usr/bin/nvim"
 export RANGER_LOAD_DEFAULT_RC=false
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export QT_QPA_PLATFORMTHEME=qt6ct
+export XDG_MENU_PREFIX=plasma-
+kbuildsycoca6

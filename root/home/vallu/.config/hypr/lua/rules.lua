@@ -26,8 +26,67 @@ hl.window_rule({
     no_focus = true,
 })
 
-----------
--- auto-hide Noctalia top bar on fullscreen, otherwise make it stay
+-------------------------------------------------------------------------------
+---- auto-hide Noctalia top bar on fullscreen, otherwise make it stay
+-------------------------------------------------------------------------------
+-- revised edition to fix alt+tab-ing into other windows when in fullscreen
+-- local function is_fullscreen(w)
+--     return w ~= nil and not w.floating and (w.fullscreen == 2 or w.fullscreen == 3)
+-- end
+-- 
+-- local function workspace_has_fullscreen(ws)
+--     if ws == nil then return false end
+--     for _, w in ipairs(hl.get_workspace_windows(ws)) do
+--         if is_fullscreen(w) then return true end
+--     end
+--     return false
+-- end
+-- 
+-- local CMDS = {
+--     hidden = "noctalia msg bar-auto-hide-set true; noctalia msg bar-hide; noctalia msg bar-layer-set overlay",
+--     pinned = "noctalia msg bar-auto-hide-set false; noctalia msg bar-show; noctalia msg bar-layer-set overlay",
+--     normal = "noctalia msg bar-auto-hide-set false; noctalia msg bar-show; noctalia msg bar-layer-set top",
+-- }
+-- 
+-- local last_state = nil
+-- local generation = 0
+-- 
+-- local function apply_bar()
+--     local win = hl.get_active_window()
+--     local ws = win and win.workspace
+-- 
+--     local state
+--     if is_fullscreen(win) then
+--         state = "hidden"
+--     elseif workspace_has_fullscreen(ws) then
+--         state = "pinned"
+--     else
+--         state = "normal"
+--     end
+-- 
+--     if state == last_state then return end
+--     last_state = state
+-- 
+--     -- one process, commands strictly in order
+--     hl.dispatch(hl.dsp.exec_cmd("sh -c '" .. CMDS[state] .. "'"))
+-- end
+-- 
+-- local function schedule_update()
+--     generation = generation + 1
+--     local my_gen = generation
+--     -- debounce: wait for the burst of events (unfullscreen / focus / fullscreen) to settle
+--     hl.timer(function()
+--         if my_gen == generation then apply_bar() end
+--     end, { timeout = 50, type = "oneshot" })
+-- end
+-- 
+-- hl.on("window.active", schedule_update)
+-- hl.on("window.fullscreen", schedule_update)
+
+----------------
+--- revised edition of above, to keep bar visible when a panel or something of
+--- that sort is open
+----------------
 local function is_fullscreen(w)
     return w ~= nil and not w.floating and (w.fullscreen == 2 or w.fullscreen == 3)
 end
@@ -35,47 +94,74 @@ end
 local function workspace_has_fullscreen(ws)
     if ws == nil then return false end
     for _, w in ipairs(hl.get_workspace_windows(ws)) do
-        if is_fullscreen(w) then
-            return true
-        end
+        if is_fullscreen(w) then return true end
     end
     return false
 end
 
-local function update_bar(win)
-    local ws = win and win.workspace
-    local fs_in_ws = workspace_has_fullscreen(ws)
+-- Namespaces of Noctalia panel layer surfaces. ADJUST THESE: run `hyprctl layers`
+-- with a panel open and see what its namespace is. Don't match the bar itself.
+-- local PANEL_PATTERNS = { "^noctalia%-panel", "^noctalia%-launcher", "^noctalia%-control" }
+local PANEL_PATTERNS = { "^noctalia%-panel$", }
 
-    if is_fullscreen(win) then
-        -- focused window is itself fullscreen: hide, auto-hide, overlay so it can peek above it
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-auto-hide-set true"))
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-hide"))
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-layer-set overlay"))
-    elseif fs_in_ws then
-        -- a floating window is focused, but a fullscreen window is still present
-        -- underneath in this workspace: bar must stay on overlay or it gets covered
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-auto-hide-set false"))
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-show"))
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-layer-set overlay"))
-    else
-        -- no fullscreen window anywhere in the workspace: normal top layer
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-auto-hide-set false"))
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-show"))
-        hl.dispatch(hl.dsp.exec_cmd("noctalia msg bar-layer-set top"))
+local function is_panel_layer(l)
+    local ns = l and l.namespace
+    if not ns then return false end
+    for _, p in ipairs(PANEL_PATTERNS) do
+        if ns:find(p) then return true end
     end
+    return false
 end
 
-hl.on("window.active", function(win)
-    update_bar(win)
-end)
+-- Query live state rather than tracking open/close events, so it can't drift
+local function panel_open()
+    for _, l in ipairs(hl.get_layers()) do
+        if is_panel_layer(l) then return true end
+    end
+    return false
+end
 
-hl.on("window.fullscreen", function(win)
-    -- recompute for the currently active window, not just when the changed
-    -- window happens to be active — a background window's fullscreen toggle
-    -- still changes what the workspace looks like
-    update_bar(hl.get_active_window())
-end)
-----------
+local CMDS = {
+    hidden = "noctalia msg bar-auto-hide-set true; noctalia msg bar-hide; noctalia msg bar-layer-set overlay",
+    pinned = "noctalia msg bar-auto-hide-set false; noctalia msg bar-show; noctalia msg bar-layer-set overlay",
+    normal = "noctalia msg bar-auto-hide-set false; noctalia msg bar-show; noctalia msg bar-layer-set top",
+}
+
+local last_state = nil
+local generation = 0
+
+local function apply_bar()
+    local win = hl.get_active_window()
+    local ws = win and win.workspace
+
+    local state
+    if is_fullscreen(win) then
+        -- fullscreen focused: hide, unless a panel is open
+        state = panel_open() and "pinned" or "hidden"
+    elseif workspace_has_fullscreen(ws) then
+        state = "pinned"
+    else
+        state = "normal"
+    end
+
+    if state == last_state then return end
+    last_state = state
+    hl.dispatch(hl.dsp.exec_cmd("sh -c '" .. CMDS[state] .. "'"))
+end
+
+local function schedule_update()
+    generation = generation + 1
+    local my_gen = generation
+    hl.timer(function()
+        if my_gen == generation then apply_bar() end
+    end, { timeout = 50, type = "oneshot" })
+end
+
+hl.on("window.active", schedule_update)
+hl.on("window.fullscreen", schedule_update)
+hl.on("layer.opened", schedule_update)   -- guessed event names
+hl.on("layer.closed", schedule_update)
+-------------------------------------------------------------------------------
 
 hl.window_rule({
     -- float Clipse window

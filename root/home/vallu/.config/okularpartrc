@@ -16,7 +16,6 @@ ShellOpenFileInTabs=true
 ShowLeftPanel=false
 
 [PageView]
-MouseMode=TextSelect
 ScrollOverlap=5
 SmoothScrolling=false
 
