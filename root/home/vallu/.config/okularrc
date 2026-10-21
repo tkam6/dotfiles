@@ -7,6 +7,9 @@ shouldShowToolBarComingFromFullScreen=false
 LockSidebar=true
 ShowSidebar=false
 
+[MainWindow]
+MenuBar=Disabled
+
 [MainWindow][Toolbar mainToolBar]
 IconSize=16
 ToolButtonStyle=IconOnly
@@ -20,6 +23,7 @@ File5[$e]=$HOME/Downloads/assignment-solutions/DSAD_week-12.pdf
 File6[$e]=$HOME/Downloads/assignment-solutions/DSAD_week-10.pdf
 File7[$e]=$HOME/Downloads/func-mtrls_midsem-marks.pdf
 File8[$e]=$HOME/Documents/compu_mthds_labsheet_1.pdf
+File9[$e]=$HOME/mnt/Internal shared storage/Download/1-s2.0-S1742706111002017-main.pdf
 Name1[$e]=DSAD_week-9.pdf
 Name2[$e]=DSAD_week-7.pdf
 Name3[$e]=DSAD_week-4.pdf
@@ -28,6 +32,7 @@ Name5[$e]=DSAD_week-12.pdf
 Name6[$e]=DSAD_week-10.pdf
 Name7[$e]=func-mtrls_midsem-marks.pdf
 Name8[$e]=compu_mthds_labsheet_1.pdf
+Name9[$e]=1-s2.0-S1742706111002017-main.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

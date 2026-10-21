@@ -218,9 +218,13 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    match  = { class = "Tk" },
-    float  = true,
-    center = true,
+    match = {
+        initial_class = "blender",
+        class = "blender",
+        initial_title = "File Browser",
+        title = "Blender File View",
+    },
+    size = { "(monitor_w * 0.50)", "(monitor_h * 0.53)" },
 })
 
 -----------------------

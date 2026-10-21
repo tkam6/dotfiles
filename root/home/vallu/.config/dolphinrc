@@ -11,6 +11,7 @@ HiddenFilesShown=true
 
 [General]
 AlwaysShowTabBar=true
+DoubleClickViewAction=none
 DynamicView=true
 LockPanels=false
 RememberOpenedTabs=false
@@ -19,6 +20,9 @@ ShowStatusBar=FullWidth
 ShowZoomSlider=true
 Version=202
 ViewPropsTimestamp=2026,10,19,14,38,16.123
+
+[IconsMode]
+PreviewSize=96
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
