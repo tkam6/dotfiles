@@ -1,13 +1,17 @@
 [ContextMenu]
 ShowMoveToOtherSplitView=false
 
+[DetailsMode]
+LeftPadding=0
+PreviewSize=32
+RightPadding=0
+
 [FoldersPanel]
 HiddenFilesShown=true
 
 [General]
 AlwaysShowTabBar=true
 DynamicView=true
-GlobalViewProps=false
 LockPanels=false
 RememberOpenedTabs=false
 ShowFullPath=true
@@ -15,9 +19,6 @@ ShowStatusBar=FullWidth
 ShowZoomSlider=true
 Version=202
 ViewPropsTimestamp=2026,10,19,14,38,16.123
-
-[IconsMode]
-PreviewSize=80
 
 [KFileDialog Settings]
 Places Icons Auto-resize=false
