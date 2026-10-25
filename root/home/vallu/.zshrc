@@ -53,9 +53,9 @@ alias yoink='git pull'
 FUCK_OFF_CNTR=0
 help() {
     (( FUCK_OFF_CNTR++ ))
-    if (( FUCK_OFF_CNTR >= 8 )); then
+    if (( FUCK_OFF_CNTR > 5 )); then
         printf 'fuck off goddammit\n'
-    elif (( FUCK_OFF_CNTR >= 5 )); then
+    elif (( FUCK_OFF_CNTR > 3 )); then
         printf 'seriously mate?\n'
     else
         printf 'fuck off\n'
