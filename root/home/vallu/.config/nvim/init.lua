@@ -2,9 +2,9 @@
 vim.cmd("source ~/.vimrc")
 
 
--- -------------
--- ----- PLUGINS
--- -------------
+-- =============
+-- ===== PLUGINS
+-- =============
 vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
     {
@@ -23,18 +23,23 @@ vim.pack.add({
             vim.cmd("fzf#install")
         end
     },
-
 })
 
 
--- ----------------
--- ----- LSP CONFIG
--- ----------------
+-- =====================
+-- ===== NVIM-TREESITTER
+-- =====================
+require('nvim-treesitter').install({ 'python', 'c', 'rust' })
+
+
+-- ================
+-- ===== LSP CONFIG
+-- ================
 vim.lsp.config("ruff", {
     init_options = {
         settings = {
             configuration = "~/.config/ruff/ruff.toml",
-            line_length = 79,
+            lineLength = 79,
             lint = { preview = true },
         },
     },
@@ -114,33 +119,6 @@ vim.keymap.set("n", "-", function()
     require("oil").open()
 end)
 
--- -------------------
--- ----- COLOUR SCHEME
--- -------------------
-require('nightfox').setup({
-    options = {
-        transparent = true,
-        styles = {
-            -- `:help attr-list`
-            comments     = "NONE",
-            conditionals = "NONE",
-            constants    = "NONE",
-            functions    = "NONE",
-            keywords     = "bold",
-            numbers      = "NONE",
-            operators    = "NONE",
-            strings      = "NONE",
-            types        = "NONE",
-            variables    = "NONE",
-        },
-        -- inverse highlight for different types
-        inverse = { match_paren = true },
-    },
-    palettes = {},
-    specs = {},
-    groups = {},
-})
-
 
 -- -------------------
 -- ----- INDENT GUIDES
@@ -170,6 +148,7 @@ require("ibl").setup({
     indent = {
         highlight = highlight,
         char = "│",
+        --char = "•",
     },
 })
 -- for first-level spaces and tabs
@@ -180,7 +159,7 @@ hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
 -- -------------------
 -- ----- MISCELLANEOUS
 -- -------------------
-vim.cmd.colorscheme("carbonfox")
+--vim.cmd.colorscheme("carbonfox")
 require("statusline")
 require("tabline")
 vim.opt.showtabline = 2
@@ -235,15 +214,15 @@ vim.cmd([[
 ]])
 
 
--- -------------
--- ----- KEYMAPS
--- -------------
+-- =============
+-- ===== KEYMAPS
+-- =============
 -- remap Y to yy because it is y$ by default in nvim
 vim.keymap.set("n", "Y", "yy", { desc = "Yank whole line" })
 vim.keymap.set("n", "<leader>cv", ":vnew | r !", { desc = "Execute a external command in a vertical split" })
 vim.keymap.set("n", "<leader>ch", ":new | r !", { desc = "Execute a external command in a horizontal split" })
 vim.keymap.set("n", "<leader>ct", ":tabe | r !", { desc = "Execute a external command in a tab" })
-vim.keymap.set("t", "<leader>]", [[<C-\><C-n>]], { desc = "Come back to Neovim from terminal" })
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Come back to Neovim from terminal" })
 
 
 -- -----------------------
@@ -270,3 +249,16 @@ vim.g.fzf_action = {
     [ 'ctrl-h' ] = 'split',
     [ 'ctrl-v' ] = 'vsplit'
 }
+
+-- ==============
+-- ===== AUTOCMDS
+-- ==============
+-- from https://github.com/nvim-treesitter/nvim-treesitter/issues/8031
+vim.api.nvim_create_autocmd('FileType', {
+    callback = function(opts)
+        local lang = vim.treesitter.language.get_lang(vim.bo[opts.buf].filetype)
+        if vim.treesitter.language.add(lang) then
+            vim.treesitter.start()
+        end
+    end,
+})
