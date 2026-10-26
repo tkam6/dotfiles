@@ -1,59 +1,45 @@
+-- the greatest, most powerful, OG
 vim.cmd("source ~/.vimrc")
 
 
----------------
---- PLUGINS ---
----------------
+-- -------------
+-- ----- PLUGINS
+-- -------------
 vim.pack.add({
     { src = "https://github.com/neovim/nvim-lspconfig" },
-    { src = "https://github.com/detachhead/basedpyright" },
-    { src = "https://github.com/nvim-tree/nvim-web-devicons" },
     {
         src = "https://github.com/nvim-treesitter/nvim-treesitter",
         build = function()
             vim.cmd("TSUpdate")
         end,
     },
-    -- { src = "https://github.com/davidhalter/jedi-vim" },
     { src = "https://github.com/ervandew/supertab" },
     { src = "https://github.com/stevearc/oil.nvim" },
     { src = "https://github.com/EdenEast/nightfox.nvim" },
-    { src = "https://github.com/rktjmp/lush.nvim" },
     { src = "https://github.com/lukas-reineke/indent-blankline.nvim" },
-    -- { src = "https://github.com/preservim/vim-indent-guides" },
+    {
+        src = "https://github.com/junegunn/fzf",
+        build = function()
+            vim.cmd("fzf#install")
+        end
+    },
+
 })
 
 
--- LSP CONFIG
+-- ----------------
+-- ----- LSP CONFIG
+-- ----------------
 vim.lsp.config("ruff", {
     init_options = {
         settings = {
             configuration = "~/.config/ruff/ruff.toml",
             line_length = 79,
-            lint = {
-                preview = true,
-            }
-        }
-    }
+            lint = { preview = true },
+        },
+    },
 })
-
 vim.lsp.enable("ruff")
--- vim.lsp.config("basedpyright", {
---     settings = {
---         basedpyright = {
---             analysis = {
---                 typeCheckingMode = "standard",      -- off, basic, standard, strict
---                 diagnosticMode = "openFilesOnly",
---                 useLibraryCodeForTypes = true,
---                 autoSearchPaths = true,
---             },
---         },
---     },
--- })
--- vim.lsp.enable("basedpyright")
--- vim.diagnostic.config({
---     virtual_text = false,
--- })
 
 -- toggle floating window
 local diagnostic_float
@@ -66,6 +52,7 @@ vim.keymap.set("n", "<leader>e", function()
         diagnostic_float = winnr
     end
 end, { desc = "Toggle diagnostic window" })
+
 -- open all diagnostics results
 vim.keymap.set("n", "<leader>a", vim.diagnostic.setqflist, { desc = "Open diagnostics results" })
 -- toggle virtual text (inline messages)
@@ -75,19 +62,19 @@ vim.keymap.set("n", "<leader>i", function()
     })
 end, { desc = "Toggle diagnostic virtual text" })
 -- auto-open floating window on cursor hold ("hover")
--- vim.o.updatetime = 1000
--- vim.api.nvim_create_autocmd("CursorHold", {
---     callback = function()
---         vim.diagnostic.open_float(nil, {
---             focus = false,
---         })
---     end,
--- })
+--vim.o.updatetime = 1000
+--vim.api.nvim_create_autocmd("CursorHold", {
+--    callback = function()
+--        vim.diagnostic.open_float(nil, {
+--            focus = false,
+--        })
+--    end,
+--})
 
 
-----------------
---- OIL.NVIM ---
-----------------
+-- --------------
+-- ----- OIL.NVIM
+-- --------------
 require("oil").setup({
     columns = {
         "permissions",
@@ -114,6 +101,7 @@ require("oil").setup({
     },
     view_options = { show_hidden = true },
 })
+
 vim.keymap.set("n", "+", function()
     vim.cmd("tabe")
     require("oil").open()
@@ -126,14 +114,15 @@ vim.keymap.set("n", "-", function()
     require("oil").open()
 end)
 
----------------------
---- COLOUR SCHEME ---
----------------------
+-- -------------------
+-- ----- COLOUR SCHEME
+-- -------------------
 require('nightfox').setup({
     options = {
         transparent = true,
         styles = {
-            comments     = "NONE",     -- `:help attr-list`
+            -- `:help attr-list`
+            comments     = "NONE",
             conditionals = "NONE",
             constants    = "NONE",
             functions    = "NONE",
@@ -144,37 +133,18 @@ require('nightfox').setup({
             types        = "NONE",
             variables    = "NONE",
         },
-        inverse = {             -- Inverse highlight for different types
-            match_paren = true,
-        },
+        -- inverse highlight for different types
+        inverse = { match_paren = true },
     },
     palettes = {},
     specs = {},
     groups = {},
 })
 
--- local lush = require("lush")
--- local hsl = lush.hsl
--- local sea_foam  = hsl(208, 100, 80) -- Vim has a mapping, <n>C-a and <n>C-x to
--- local sea_crest = hsl(208, 90, 30)  -- increment or decrement integers, or
--- local sea_deep  = hsl(208, 90, 10)  -- you can just type them normally.
--- local theme = lush(function()
---     return {
---         Normal { bg = sea_deep, fg = sea_foam },  -- Goodbye gray, hello blue!
---     }
--- end)
 
-
-----------------
---- JEDI-VIM ---
-----------------
--- default scroll direction for completions
-vim.g.SuperTabDefaultCompletionType = "<c-n>"
-
-
----------------------
---- INDENT GUIDES ---
----------------------
+-- -------------------
+-- ----- INDENT GUIDES
+-- -------------------
 local highlight = {
     "RainbowRed",
     "RainbowYellow",
@@ -199,39 +169,45 @@ end)
 require("ibl").setup({
     indent = {
         highlight = highlight,
-        -- char = "┊",
         char = "│",
     },
 })
--- For first-level spaces and tabs
+-- for first-level spaces and tabs
 hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
 hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
------
--- vim.g.indent_guides_enable_on_vim_startup = 1
--- vim.g.indent_guides_start_level = 2
--- vim.g.indent_guides_guide_size = 1
 
 
-------------
---- MISC ---
-------------
+-- -------------------
+-- ----- MISCELLANEOUS
+-- -------------------
 vim.cmd.colorscheme("carbonfox")
 require("statusline")
 require("tabline")
 vim.opt.showtabline = 2
 vim.opt.laststatus = 2
 vim.opt.termguicolors = true
--- hide '-- INSERT --' because insert mode is already displayed in lualine.nvim, right?
+-- hide '-- INSERT --'
 vim.opt.showmode = false
-vim.opt.tabstop = 4         -- TAB character looks like 4 spaces
-vim.opt.softtabstop = 4     -- Number of spaces instead of TAB char
-vim.opt.shiftwidth = 4      -- Number of spaces when indenting
-vim.opt.expandtab = true    -- Pressing TAB key will insert spaces instead of TAB character
-vim.opt.guicursor = "n-v-i-c:block-Cursor"    -- Block cursor in insert mode and every damn mode
+-- TAB char looks like 4 spaces
+vim.opt.tabstop = 4
+-- number of spaces instead of TAB char
+vim.opt.softtabstop = 4
+-- number of spaces when indenting
+vim.opt.shiftwidth = 4
+-- pressing TAB key inserts spaces instead of TAB char
+vim.opt.expandtab = true
+-- block cursor in insert and every damn mode
+vim.opt.guicursor = "n-v-i-c:block-Cursor"
 vim.opt.signcolumn = "yes"
 
--- HIDDEN CUSTOMISATION
+-- SMARTER QUIT
+-- does not allow hiding a buffer when there are unsaved changes;
+-- hids a buffer when it is abandoned if there are NO unsaved changes;
+-- has one observed bug: when an alternate buffer is open (say with `+1 or
+-- something), it still hides the current buffer even when there are unsaved
+-- changes
 vim.opt.hidden = true
+
 local function smart_quit(bang)
     if not bang and vim.bo.modified then
         local bufnr = vim.api.nvim_get_current_buf()
@@ -258,14 +234,21 @@ vim.cmd([[
   cnoreabbrev <expr> q! (getcmdtype() ==# ':' && getcmdline() ==# 'q!') ? 'Q!' : 'q!'
 ]])
 
--- KEYMAPS
--- remap Y to yy because it's y$ by default in nvim
+
+-- -------------
+-- ----- KEYMAPS
+-- -------------
+-- remap Y to yy because it is y$ by default in nvim
 vim.keymap.set("n", "Y", "yy", { desc = "Yank whole line" })
 vim.keymap.set("n", "<leader>cv", ":vnew | r !", { desc = "Execute a external command in a vertical split" })
 vim.keymap.set("n", "<leader>ch", ":new | r !", { desc = "Execute a external command in a horizontal split" })
 vim.keymap.set("n", "<leader>ct", ":tabe | r !", { desc = "Execute a external command in a tab" })
 vim.keymap.set("t", "<leader>]", [[<C-\><C-n>]], { desc = "Come back to Neovim from terminal" })
 
+
+-- -----------------------
+-- ----- NEOVIDE SPECIFICS
+-- -----------------------
 if vim.g.neovide then
     vim.o.guifont = "Iosevka Nerd Font:h18"
     vim.opt.linespace = 3
@@ -276,3 +259,14 @@ if vim.g.neovide then
     vim.g.neovide_padding_right = 4
     vim.g.neovide_padding_left = 4
 end
+
+
+-- ---------
+-- ----- FZF
+-- ---------
+vim.keymap.set("n", "<leader><Space>", ":FZF<CR>", { desc = "Open fzf" })
+vim.g.fzf_action = {
+    [ 'alt-enter' ] = 'tab split',
+    [ 'ctrl-h' ] = 'split',
+    [ 'ctrl-v' ] = 'vsplit'
+}

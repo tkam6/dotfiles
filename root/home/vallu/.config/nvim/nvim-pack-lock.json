@@ -20,6 +20,14 @@
       "rev": "7cf5ceb69a6bbea547f97397fa5310b1571eb03a",
       "src": "https://github.com/X3eRo0/dired.nvim"
     },
+    "fzf": {
+      "rev": "26ff936df038b6a62ec42cf18db27b2ea2bb8ec3",
+      "src": "https://github.com/junegunn/fzf"
+    },
+    "fzf.vim": {
+      "rev": "023de3c0e158ff9c2b0992175af10be97c2f2158",
+      "src": "https://github.com/junegunn/fzf.vim"
+    },
     "gitsigns.nvim": {
       "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim"

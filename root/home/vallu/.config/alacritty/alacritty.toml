@@ -43,9 +43,6 @@ bindings = [
     { key = "PageUp", action = "ScrollPageUp" },
     { key = "PageDown", action = "ScrollPageDown" },
     { key = "F11", action = "ToggleFullscreen" },
-    { key = "Enter", mods = "Control|Shift", action = "CreateNewWindow" },
-    { key = "Enter", mods = "Control|Shift|Alt", action = "SpawnNewInstance" },
-    { key = "Enter", mods = "Alt", action = "ToggleFullscreen" },
     { key = "NumpadEnter", chars = "\n" }
 ]
 
