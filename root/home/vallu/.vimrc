@@ -57,31 +57,32 @@ set background=dark
 "highlight SignColumn guibg=#000000 guifg=#FF0000
 "highlight TrailingWS guibg=#CC5050 guifg=#FFFFFF
 
-highlight Normal       guifg=#d0d0d0 guibg=NONE    gui=NONE   cterm=NONE
-highlight CursorLine                 guibg=#303030 gui=NONE   cterm=NONE
-highlight CursorLineNr guifg=#F8FF00               gui=NONE   cterm=NONE
+highlight Normal       guifg=#d0d0d0 guibg=NONE    gui=NONE      cterm=NONE
+highlight CursorLine                 guibg=#303030 gui=NONE      cterm=NONE
+highlight CursorLineNr guifg=#F8FF00               gui=NONE      cterm=NONE
 highlight LineNr       guifg=#757575
 highlight ColorColumn                guibg=#202050
 highlight Visual                     guibg=#404060
 highlight Search       guifg=#000000 guibg=#F8FF00
-highlight NonText      guifg=#505050
-highlight SpecialKey   guifg=#505050
-highlight EndOfBuffer  guifg=#808080
+highlight Whitespace   guifg=#505050               gui=nocombine cterm=nocombine
+"highlight NonText      guifg=#505050
+"highlight SpecialKey   guifg=#505050
+"highlight EndOfBuffer  guifg=#808080
 highlight SignColumn   guifg=#FF0000 guibg=NONE
-highlight TabLine      guifg=#FFFFFF guibg=#303030 gui=NONE cterm=NONE
-highlight TabLineFill                guibg=#000000 gui=NONE cterm=NONE
-highlight TabLineSel   guifg=#FFFFFF guibg=#50AA10 gui=NONE cterm=NONE
-highlight TrailingWS   guifg=#ffffff guibg=#CC5050
+highlight TabLine      guifg=#FFFFFF guibg=#303030 gui=NONE      cterm=NONE
+highlight TabLineFill                guibg=#000000 gui=NONE      cterm=NONE
+highlight TabLineSel   guifg=#FFFFFF guibg=#50AA10 gui=NONE      cterm=NONE
+highlight TrailingWS   guifg=#ffffff guibg=#CC5050 gui=nocombine cterm=nocombine
 " syntax highlighting
-highlight Comment      guifg=#6a6a6a               gui=bold cterm=bold
+highlight Comment      guifg=#6a6a6a               gui=bold      cterm=bold
 highlight Constant     guifg=#e0a060
 highlight String       guifg=#98c379
 highlight Number       guifg=#e0a060
-highlight Identifier   guifg=#7ab0df               gui=NONE cterm=NONE
+highlight Identifier   guifg=#7ab0df               gui=NONE      cterm=NONE
 highlight Function     guifg=#61afef
-highlight Statement    guifg=#c678dd               gui=bold cterm=bold
+highlight Statement    guifg=#c678dd               gui=bold      cterm=bold
 highlight PreProc      guifg=#d19a66
-highlight Type         guifg=#e5c07b               gui=NONE cterm=NONE
+highlight Type         guifg=#e5c07b               gui=NONE      cterm=NONE
 highlight Special      guifg=#56b6c2
 highlight Error        guifg=#ffffff guibg=#CC5050
 
@@ -101,14 +102,24 @@ map      <F1>    :tabp<CR>
 map      <F2>    :tabn<CR>
 map      <F3>    <nop>
 map      <F4>    :help<CR>
+map      <F6>    :set list!<CR>
 map      <Space> $
 map      <BS>    ^
 noremap  <F6>    :set list!<CR>
 inoremap <F1>    <Esc>:tabp<CR>i
 inoremap <F2>    <Esc>:tabn<CR>i
+" these need some fine-tuning
+"inoremap <C-b>   <Esc>i
+"inoremap <C-f>   <Esc>la
+"inoremap <C-a>   <Esc>0i
+"inoremap <C-e>   <Esc>$a
+"inoremap <C-d>   <Esc>lxi
+"inoremap <M-b>   <Esc>lbi
+"inoremap <M-f>   <Esc>lwi
+" the trailing space is intentional and needed
+"inoremap <M-d>   <Esc>ldt 
 vnoremap <       <gv
 vnoremap >       >gv
-vnoremap <F6>    :set list!<CR>
 
 
 " =====================
@@ -125,7 +136,6 @@ command! -bang -nargs=* QA quitall<bang> <args>
 " =============
 autocmd BufEnter * match TrailingWS /\s\+$/
 autocmd WinEnter * match TrailingWS /\s\+$/
-
 
 " ====================
 " ===== PLUGIN MANAGER

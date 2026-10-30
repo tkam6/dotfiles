@@ -1,37 +1,40 @@
 [Desktop Entry]
-FullScreen=false
-shouldShowMenuBarComingFromFullScreen=false
-shouldShowToolBarComingFromFullScreen=false
+FullScreen=true
+shouldShowMenuBarComingFromFullScreen=true
+shouldShowToolBarComingFromFullScreen=true
 
 [General]
 LockSidebar=true
 ShowSidebar=false
+
+[MainWindow]
+MenuBar=Disabled
 
 [MainWindow][Toolbar mainToolBar]
 IconSize=16
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/assignment-solutions/DSAD_week-4.pdf
-File10[$e]=$HOME/.cache/zapfast/accounts/1/media/3EB03D8DAC5AF68A020F08-CV_till_sem6.pdf
-File2[$e]=$HOME/Downloads/assignment-solutions/DSAD_week-6.pdf
-File3[$e]=$HOME/Downloads/assignment-solutions/DSAD_week-12.pdf
-File4[$e]=$HOME/Downloads/assignment-solutions/DSAD_week-10.pdf
-File5[$e]=$HOME/Downloads/func-mtrls_midsem-marks.pdf
-File6[$e]=$HOME/Documents/compu_mthds_labsheet_1.pdf
-File7[$e]=$HOME/mnt/Internal shared storage/Download/1-s2.0-S1742706111002017-main.pdf
-File8[$e]=$HOME/Downloads/programming/Effective-C-An-Introduction-to-Professional-C-Programming.pdf
-File9[$e]=/d/CUMI/insti-perm-ltr_cumi.pdf
-Name1[$e]=DSAD_week-4.pdf
-Name10[$e]=3EB03D8DAC5AF68A020F08-CV_till_sem6.pdf
-Name2[$e]=DSAD_week-6.pdf
-Name3[$e]=DSAD_week-12.pdf
-Name4[$e]=DSAD_week-10.pdf
-Name5[$e]=func-mtrls_midsem-marks.pdf
-Name6[$e]=compu_mthds_labsheet_1.pdf
-Name7[$e]=1-s2.0-S1742706111002017-main.pdf
-Name8[$e]=Effective-C-An-Introduction-to-Professional-C-Programming.pdf
-Name9[$e]=insti-perm-ltr_cumi.pdf
+File1[$e]=/d/CUMI/insti-perm-ltr_cumi.pdf
+File10[$e]=$HOME/Downloads/THIRUVALLUVAN-CV-TILL-SEM6.pdf
+File2[$e]=$HOME/.cache/zapfast/accounts/1/media/3EB03D8DAC5AF68A020F08-CV_till_sem6.pdf
+File3[$e]=$HOME/Downloads/Functional-Materials_Semiconductors.pdf
+File4[$e]=$HOME/Downloads/FUNC-MTRLS_Assignment-1.pdf
+File5[$e]=/d/CV_resume/CV_Thiruvalluvan.pdf
+File6[$e]=/d/CV_resume/THIRUVALLUVAN_CV_SEM6.pdf
+File7[$e]=/d/CV_resume/CV_till-sem6.pdf
+File8[$e]=$HOME/.cache/zapfast/accounts/1/media/3EB01EC4C3A43513DD45F9-insti_perm_ltr_cumi.pdf
+File9[$e]=$HOME/Downloads/INSTITUTE-PERMISSION-LETTER_COMPRESSED.pdf
+Name1[$e]=insti-perm-ltr_cumi.pdf
+Name10[$e]=THIRUVALLUVAN-CV-TILL-SEM6.pdf
+Name2[$e]=3EB03D8DAC5AF68A020F08-CV_till_sem6.pdf
+Name3[$e]=Functional-Materials_Semiconductors.pdf
+Name4[$e]=FUNC-MTRLS_Assignment-1.pdf
+Name5[$e]=CV_Thiruvalluvan.pdf
+Name6[$e]=THIRUVALLUVAN_CV_SEM6.pdf
+Name7[$e]=CV_till-sem6.pdf
+Name8[$e]=3EB01EC4C3A43513DD45F9-insti_perm_ltr_cumi.pdf
+Name9[$e]=INSTITUTE-PERMISSION-LETTER_COMPRESSED.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

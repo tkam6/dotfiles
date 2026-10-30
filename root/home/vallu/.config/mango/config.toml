@@ -1,0 +1,16 @@
+##################
+##### MANGO CONFIG
+##################
+
+source = [
+    "./toml/exec.toml",
+    "./toml/env.toml",
+    "./toml/windows.toml",
+    "./toml/animations.toml",
+    "./toml/layout_settings.toml",
+    "./toml/misc.toml",
+    "./toml/input.toml",
+    "./toml/appearance.toml",
+    "./toml/keybinds.toml",
+    "./toml/rules.toml",
+]

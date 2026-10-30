@@ -1,0 +1,33 @@
+
+# # # # #
+# EXEC  #
+# # # # #
+[global]
+
+# exec-once=waybar -c /home/vallu/.config/waybar/cfg_mango.jsonc -s /home/vallu/.config/waybar/style_mango.css
+# exec-once=awww-daemon
+# exec-once=/home/vallu/.config/mango/scripts/change_wallpaper.sh
+exec-once=noctalia
+# exec-once=swaync
+# exec-once=swayosd-server
+# exec-once=hypridle
+exec-once=activate-linux
+exec-once=clipse -listen
+# CLIPHIST
+# exec-once=wl-clip-persist --clipboard regular --reconnect-tries 0
+# exec-once=wl-paste --type text --watch cliphist store
+# exec-once=gsr-ui
+# exec-once=/home/vallu/bin/batt_listener
+
+# exec-once=bluetoothctl power off
+exec-once=wmname mango
+
+# For GTK apps
+# exec=gsettings set org.gnome.desktop.interface gtk-theme "Darkly"   # for GTK3 apps
+# exec=gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"   # for GTK4 apps
+
+# For PATH expansion
+exec=systemctl --user import-environment PATH
+exec=dbus-update-activation-environment --systemd PATH
+
+exec=kbuildsycoca6

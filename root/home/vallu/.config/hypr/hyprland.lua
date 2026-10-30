@@ -16,3 +16,6 @@ require("lua.quirks")
 require("lua.render")
 require("lua.rules")
 require("lua.vars")
+
+-- Mandara Shell (generated rules, binds and colors)
+pcall(dofile, "/home/vallu/.config/mandara/generated/hyprland.lua")

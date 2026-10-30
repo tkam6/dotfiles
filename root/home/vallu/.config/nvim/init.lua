@@ -77,9 +77,9 @@ end, { desc = "Toggle diagnostic virtual text" })
 --})
 
 
--- --------------
--- ----- OIL.NVIM
--- --------------
+-- ==============
+-- ===== OIL.NVIM
+-- ==============
 require("oil").setup({
     columns = {
         "permissions",
@@ -120,9 +120,9 @@ vim.keymap.set("n", "-", function()
 end)
 
 
--- -------------------
--- ----- INDENT GUIDES
--- -------------------
+-- ===================
+-- ===== INDENT GUIDES
+-- ===================
 local highlight = {
     "RainbowRed",
     "RainbowYellow",
@@ -150,15 +150,28 @@ require("ibl").setup({
         char = "│",
         --char = "•",
     },
+    -- whitespace = {
+    --     highlight = highlight,
+    --     remove_blankline_trail = false,
+    -- },
+    scope = { enabled = false },
 })
 -- for first-level spaces and tabs
 hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
 hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
 
 
--- -------------------
--- ----- MISCELLANEOUS
--- -------------------
+-- ---------------------------------
+-- ----- SMART TAB COMPLETION PLUGIN
+-- ---------------------------------
+-- default scroll direction for completions
+vim.g.SuperTabDefaultCompletionType = "<c-n>"
+
+
+
+-- ===================
+-- ===== MISCELLANEOUS
+-- ===================
 --vim.cmd.colorscheme("carbonfox")
 require("statusline")
 require("tabline")
@@ -225,9 +238,9 @@ vim.keymap.set("n", "<leader>ct", ":tabe | r !", { desc = "Execute a external co
 vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { desc = "Come back to Neovim from terminal" })
 
 
--- -----------------------
--- ----- NEOVIDE SPECIFICS
--- -----------------------
+-- =======================
+-- ===== NEOVIDE SPECIFICS
+-- =======================
 if vim.g.neovide then
     vim.o.guifont = "Iosevka Nerd Font:h18"
     vim.opt.linespace = 3
@@ -240,9 +253,9 @@ if vim.g.neovide then
 end
 
 
--- ---------
--- ----- FZF
--- ---------
+-- =========
+-- ===== FZF
+-- =========
 vim.keymap.set("n", "<leader><Space>", ":FZF<CR>", { desc = "Open fzf" })
 vim.g.fzf_action = {
     [ 'alt-enter' ] = 'tab split',
