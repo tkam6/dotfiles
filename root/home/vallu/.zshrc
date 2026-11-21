@@ -10,7 +10,7 @@ autoload run-help
 ##############
 # version control info
 autoload -Uz vcs_info
-# Format the vcs_info_msg_0_ variable
+# format the vcs_info_msg_0_ variable
 zstyle ':vcs_info:git:*' formats '%b'
 
 
@@ -32,11 +32,12 @@ zle -N backward-kill-dir
 bindkey '^[^?' backward-kill-dir
 zshexit() { echo "bye" }
 
-
 #############
 ##### ALIASES
 #############
 alias anews='xdg-open https://archlinux.org/news'
+alias df='df -h'
+alias du='du -h'
 alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias less='less -Ni'
@@ -49,6 +50,10 @@ alias start='xdg-open'
 alias steal='git clone'
 alias yeet='git push'
 alias yoink='git pull'
+
+back() {
+    "$@" &>/dev/null &!
+}
 
 FUCK_OFF_CNTR=0
 help() {
@@ -72,20 +77,25 @@ autoload -Uz compinit && compinit
 ##########
 ##### TMUX
 ##########
-# Do not exit shell on ^d
-# if [[ -n $TMUX ]]
-# then
-#     setopt IGNORE_EOF
-# fi
+# do not exit shell on ^d
+#if [[ -n $TMUX ]]
+#then
+#    setopt IGNORE_EOF
+#fi
 
 #############
 ##### GENERAL
 #############
-# Do not exit shell on ^d
-if [[ -n $VIRTUAL_ENV ]]
-then
-    setopt IGNORE_EOF
-fi
+# report time for each command automatically
+REPORTTIME=0
+#TIMEFMT=$'ran: %J\nreal %*E  user %*U  sys %*S'
+#TIMEFMT=$'real %E  user %U  sys %S'
+TIMEFMT=$'real %mE  user %mU  sys %mS'
+# do not exit shell on ^d
+#if [[ -n $VIRTUAL_ENV ]]
+#then
+#    setopt IGNORE_EOF
+#fi
 
 #################
 ##### INTERACTIVE
@@ -148,7 +158,9 @@ if [[ -n "$SSH_CONNECTION" ]]; then
     _CONNECTION_TYP="ssh${SSH_CONNECTION}"
 fi
 
-preexec() { CMD_START_TIME=$EPOCHREALTIME }
+preexec() {
+    CMD_START_TIME=$EPOCHREALTIME
+}
 
 precmd()
 {
@@ -188,8 +200,12 @@ precmd()
     if [[ -n $CMD_START_TIME ]]; then
         local end_time=$EPOCHREALTIME
         CMD_DURATION=$(printf "%.0f" $(( end_time - CMD_START_TIME )))
+        #CMD_DURATION_PRECISE=$(printf "%.3f" $(( end_time - CMD_START_TIME )))
+        #printf "$(fc -ln -1)\ndone in ${CMD_DURATION_PRECISE}s\n"
+        unset CMD_START_TIME
     fi
 }
+
 # old, big prompt
 #PS1=$'${_ARROW_LN_TOP} ${_PROMPT_BULLET} \e[2mzsh${ZSH_VERSION}\e[0m p:%U%#%u j:%U%j%u \e[2mt:${CMD_DURATION}s\e[0m ${_VIRT_ENV}${_CONNECTION_TYP}:%F{yellow}%n%f@%F{blue}%M%f %B%F{green}${_PTH}%f%b
 # ${_ARROW_PS1} '

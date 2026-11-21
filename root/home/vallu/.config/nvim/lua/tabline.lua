@@ -67,32 +67,44 @@ local function condense_path(path)
     return prefix .. "/" .. joined
 end
 
+
 --------------
 --- BUFFER ---
 --------------
+local function strip_oil(name)
+    return (name:gsub("^oil://", ""))
+end
+
 local function buffer_name(bufnr)
     local name = vim.api.nvim_buf_get_name(bufnr)
     if name == "" then
         return "[buf]"
     end
     if vim.bo[bufnr].filetype == "oil" then
-        return "[dir] " .. condense_path(vim.fn.fnamemodify(name:gsub("^oil://", ""), ":p"))
+        return "[dir] " .. condense_path(vim.fn.fnamemodify(strip_oil(name), ":p"))
     end
     return condense_path(vim.fn.fnamemodify(name, ":p"))
 end
 
-local function real_path()
-    if vim.bo.filetype == "oil" then
-        return vim.api.nvim_buf_get_name(0):gsub("^oil://", "")
-    else
-        return vim.fn.expand("%:p")
+-- real filesystem path of THIS buffer ("" if it has none)
+local function real_path(bufnr)
+    local name = vim.api.nvim_buf_get_name(bufnr)
+    if name == "" then
+        return ""
     end
+    if vim.bo[bufnr].filetype == "oil" then
+        return strip_oil(name)
+    end
+    -- skip terminals, help, quickfix, etc. (they aren't files)
+    if vim.bo[bufnr].buftype ~= "" then
+        return ""
+    end
+    return vim.fn.fnamemodify(name, ":p")
 end
 
 local function buffer_state(bufnr)
     local states = {}
-    local buf_path = vim.api.nvim_buf_get_name(bufnr)
-    local realpath = real_path(buf_path)
+    local realpath = real_path(bufnr)
 
     if vim.bo[bufnr].modified then
         table.insert(states, "+")
@@ -113,33 +125,30 @@ end
 -----------
 --- TAB ---
 -----------
+-- returns the rendered string and its visible width
 local function tab(bufnr, number, active)
     local name = buffer_name(bufnr)
     local state = buffer_state(bufnr)
 
-    local name_hl
-    if active then
-        name_hl = "TabLineActive"
-    else
-        name_hl = "TabLineInactive"
-    end
+    local width = 1 + #tostring(number) + 1
+        + vim.fn.strdisplaywidth(name)
+        + vim.fn.strdisplaywidth(state)
+
+    -- escape % so it isn't read as a statusline item
+    local safe_name = name:gsub("%%", "%%%%")
 
     local result = {
         " ",
         hl("TabLineNumber", tostring(number)),
         " ",
-        hl(name_hl, name),
+        hl(active and "TabLineActive" or "TabLineInactive", safe_name),
     }
 
     if state ~= "" then
-        table.insert(
-            result,
-            hl("TabLineModified", state)
-        )
+        table.insert(result, hl("TabLineModified", state))
     end
 
-    table.insert(result, "")
-    return table.concat(result)
+    return table.concat(result), width
 end
 
 
@@ -148,22 +157,75 @@ end
 ---------------
 local tab_ln = {}
 
+local first = 1   -- first visible tab; persists between redraws
+local IND = 6     -- width of the "< " / " >" indicators
+
 function tab_ln.active()
-    local tabs = {}
     local current_tab = vim.api.nvim_get_current_tabpage()
+    local rendered, widths, active = {}, {}, 1
 
     for i, tabpage in ipairs(vim.api.nvim_list_tabpages()) do
         local win = vim.api.nvim_tabpage_get_win(tabpage)
         local bufnr = vim.api.nvim_win_get_buf(win)
-        table.insert(
-            tabs,
-            tab(bufnr, i, tabpage == current_tab)
-        )
+        local str, width = tab(bufnr, i, tabpage == current_tab)
+        rendered[i] = str
+        widths[i] = width
+        if tabpage == current_tab then
+            active = i
+        end
     end
 
-    return table.concat(tabs, " ")
-        .. "%="
-        .. ""
+    local n = #rendered
+    local total = vim.o.columns
+
+    -- do tabs a..b (plus separators and indicators) fit on screen?
+    local function fits(a, b)
+        local w = b - a -- one-space separators
+        for i = a, b do
+            w = w + widths[i]
+        end
+        if a > 1 then w = w + IND end
+        if b < n then w = w + IND end
+        return w <= total
+    end
+
+    if first > n then first = n end
+    if first > active then first = active end
+
+    -- scroll right until the active tab fits
+    while first < active and not fits(first, active) do
+        first = first + 1
+    end
+
+    -- extend to the right as far as possible
+    local last = active
+    while last < n and fits(first, last + 1) do
+        last = last + 1
+    end
+
+    -- use leftover space on the left (e.g. after closing tabs)
+    while first > 1 and fits(first - 1, last) do
+        first = first - 1
+    end
+
+    local visible = {}
+    for i = first, last do
+        table.insert(visible, rendered[i])
+    end
+
+    --local left = first > 1 and (hl("TabLineNumber", "<") .. " ") or ""
+    --local right = last < n and (" " .. hl("TabLineNumber", ">")) or ""
+    local hidden_left = first - 1
+    local hidden_right = n - last
+
+    local left = hidden_left > 0
+        and (hl("TabLineNumber", " <" .. hidden_left .. "> ") .. " ")
+        or ""
+    local right = hidden_right > 0
+        and (" " .. hl("TabLineNumber", " <" .. hidden_right .. "> "))
+        or ""
+
+    return left .. table.concat(visible, " ") .. right .. "%="
 end
 
 

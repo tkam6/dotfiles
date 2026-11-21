@@ -1,5 +1,5 @@
 [Desktop Entry]
-FullScreen=true
+FullScreen=false
 shouldShowMenuBarComingFromFullScreen=true
 shouldShowToolBarComingFromFullScreen=true
 
@@ -7,34 +7,31 @@ shouldShowToolBarComingFromFullScreen=true
 LockSidebar=true
 ShowSidebar=false
 
-[MainWindow]
-MenuBar=Disabled
-
 [MainWindow][Toolbar mainToolBar]
 IconSize=16
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=/d/CUMI/insti-perm-ltr_cumi.pdf
-File10[$e]=$HOME/Downloads/THIRUVALLUVAN-CV-TILL-SEM6.pdf
-File2[$e]=$HOME/.cache/zapfast/accounts/1/media/3EB03D8DAC5AF68A020F08-CV_till_sem6.pdf
-File3[$e]=$HOME/Downloads/Functional-Materials_Semiconductors.pdf
-File4[$e]=$HOME/Downloads/FUNC-MTRLS_Assignment-1.pdf
-File5[$e]=/d/CV_resume/CV_Thiruvalluvan.pdf
-File6[$e]=/d/CV_resume/THIRUVALLUVAN_CV_SEM6.pdf
-File7[$e]=/d/CV_resume/CV_till-sem6.pdf
-File8[$e]=$HOME/.cache/zapfast/accounts/1/media/3EB01EC4C3A43513DD45F9-insti_perm_ltr_cumi.pdf
-File9[$e]=$HOME/Downloads/INSTITUTE-PERMISSION-LETTER_COMPRESSED.pdf
-Name1[$e]=insti-perm-ltr_cumi.pdf
-Name10[$e]=THIRUVALLUVAN-CV-TILL-SEM6.pdf
-Name2[$e]=3EB03D8DAC5AF68A020F08-CV_till_sem6.pdf
-Name3[$e]=Functional-Materials_Semiconductors.pdf
-Name4[$e]=FUNC-MTRLS_Assignment-1.pdf
-Name5[$e]=CV_Thiruvalluvan.pdf
-Name6[$e]=THIRUVALLUVAN_CV_SEM6.pdf
-Name7[$e]=CV_till-sem6.pdf
-Name8[$e]=3EB01EC4C3A43513DD45F9-insti_perm_ltr_cumi.pdf
-Name9[$e]=INSTITUTE-PERMISSION-LETTER_COMPRESSED.pdf
+File1[$e]=$HOME/Downloads/INSTITUTE-PERMISSION-LETTER_COMPRESSED.pdf
+File10[$e]=$HOME/Downloads/superset/SAP-FDEData.pdf
+File2[$e]=$HOME/personal/arch_cmds.md
+File3[$e]=$HOME/Downloads/FUNC-MTRLS_Assignment-1.pdf
+File4[$e]=$HOME/Downloads/superset/Agentic Integration-AISpecialist.pdf
+File5[$e]=$HOME/Downloads/superset/Blueverse-AgenticAIEngineer.pdf
+File6[$e]=$HOME/Downloads/superset/Data&Analytics-DataAI.pdf
+File7[$e]=$HOME/Downloads/superset/Eligibility Criteria Document - Premier T-School Hiring - Batch 2027.pdf
+File8[$e]=$HOME/Downloads/superset/HLS_AssociateSoftwareEngineer.pdf
+File9[$e]=$HOME/Downloads/superset/iNXT-DigitalTwin.pdf
+Name1[$e]=INSTITUTE-PERMISSION-LETTER_COMPRESSED.pdf
+Name10[$e]=SAP-FDEData.pdf
+Name2[$e]=arch_cmds.md
+Name3[$e]=FUNC-MTRLS_Assignment-1.pdf
+Name4[$e]=Agentic Integration-AISpecialist.pdf
+Name5[$e]=Blueverse-AgenticAIEngineer.pdf
+Name6[$e]=Data&Analytics-DataAI.pdf
+Name7[$e]=Eligibility Criteria Document - Premier T-School Hiring - Batch 2027.pdf
+Name8[$e]=HLS_AssociateSoftwareEngineer.pdf
+Name9[$e]=iNXT-DigitalTwin.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly

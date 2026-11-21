@@ -4,8 +4,8 @@
 --- KEYBINDINGS ---
 -------------------
 local terminal = "alacritty"
-local fl_mgr = "dolphin"
-local fl_mgr_alt = "dolphin"
+local fl_mgr = "nautilus"
+local fl_mgr_alt = "nautilus"
 local menu_run = "rofi -show run"
 local menu_drun = "rofi -show drun"
 
@@ -127,7 +127,8 @@ hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER + SHIFT + mouse:273", hl.dsp.window.resize({ keep_aspect_ratio = true }), { mouse = true })
 
 -- volume and brightness controls
-hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+--hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
+hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true })
 hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"), { locked = true })
 hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"), { locked = true })
 hl.bind("XF86AudioMicMute",      hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"), { locked = true })
@@ -175,5 +176,5 @@ hl.bind("SUPER + comma",     hl.dsp.exec_cmd(ipc .. "settings-toggle"))
 ----------------------------
 --- HYPRSPACE
 ----------------------------
-hl.bind("SUPER + tab", function() hl.plugin.overview.toggle() end, { description = "Toggle Hyprspace overview" })
-hl.bind("SUPER + SHIFT + tab", function() hl.plugin.overview.toggle("all") end, { description = "Toggle Hyprspace overview on all monitors" })
+--hl.bind("SUPER + tab", function() hl.plugin.overview.toggle() end, { description = "Toggle Hyprspace overview" })
+--hl.bind("SUPER + SHIFT + tab", function() hl.plugin.overview.toggle("all") end, { description = "Toggle Hyprspace overview on all monitors" })

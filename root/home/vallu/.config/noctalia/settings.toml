@@ -43,7 +43,7 @@ order = [ "main" ]
         accordion_direction = "end"
         border_width = 1.0
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g2"
         members = [ "close", "fullscreen-button", "maximise-button", "minimise-button" ]
         opacity = 0.30000001192092896
@@ -54,7 +54,7 @@ order = [ "main" ]
         accordion_direction = "end"
         border_width = 1.0
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g1"
         members = [ "sysmon", "ram", "cpu", "temp" ]
         opacity = 0.25
@@ -66,7 +66,7 @@ order = [ "main" ]
         accordion_direction = "end"
         border_width = 1.0
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g3"
         members = [ "sysmon", "ram", "cpu", "temp" ]
         opacity = 0.0
@@ -78,7 +78,7 @@ order = [ "main" ]
         accordion_direction = "end"
         border_width = 1.0
         enabled = true
-        fill = "surface_variant"
+        fill = "surface_container"
         id = "g4"
         members = [ "close_2", "fullscreen_button_2", "maximise_button_2", "minimise_button_2" ]
         opacity = 0.30000001192092896
@@ -256,7 +256,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@WAYLAND-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -283,7 +283,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.88
         background_radius = 12.0
         center_password_text = false
@@ -310,7 +310,7 @@ widget_order = [
     type = "login_box"
 
         [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
-        background_color = "surface_variant"
+        background_color = "surface_container"
         background_opacity = 0.5
         background_radius = 12.0
         center_password_text = true

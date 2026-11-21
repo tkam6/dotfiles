@@ -21,7 +21,7 @@ hl.config({
     },
 
     cursor = {
-        inactive_timeout = 90,
+        inactive_timeout = 0,
         no_warps = false,
         persistent_warps = false,
         zoom_factor = 1.0,

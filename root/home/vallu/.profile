@@ -24,7 +24,10 @@ fi
 export PATH
 
 export EDITOR="/usr/bin/nvim"
+export TERMINAL="/usr/bin/alacritty"
 export RANGER_LOAD_DEFAULT_RC=false
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export QT_QPA_PLATFORMTHEME=qt6ct
+#export QT_QPA_PLATFORMTHEME=gnome
+export GTK_USE_PORTAL=1
 XDG_MENU_PREFIX=plasma- kbuildsycoca6 >/dev/null 2>&1
