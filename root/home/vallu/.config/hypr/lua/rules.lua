@@ -234,7 +234,7 @@ hl.workspace_rule({
     -- dropdown terminal workspace
     workspace = "special:dropdown_term",
     gaps_out = 0,
-    on_created_empty = "alacritty --option font.size=18 --class AlacrittyDropdown",
+    on_created_empty = "alacritty --option font.size=15 --class AlacrittyDropdown",
 })
 
 -------------------
@@ -257,3 +257,9 @@ hl.workspace_rule({
 --     match = { namespace = "waybar" },
 --     ignore_alpha = 0,
 -- })
+
+------------------
+-- SNAPPY SWITCHER
+-- liquid glass blur rules
+ hl.layer_rule({ match = { namespace = "snappy-switcher" }, blur = true })
+ hl.layer_rule({ match = { namespace = "snappy-switcher" }, ignore_alpha = 0.01 })
