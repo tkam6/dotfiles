@@ -22,7 +22,7 @@ Version=202
 ViewPropsTimestamp=2026,10,19,14,38,16.123
 
 [IconsMode]
-IconSize=80
+IconSize=96
 PreviewSize=80
 
 [KFileDialog Settings]
@@ -39,3 +39,6 @@ Plugins=glycin-image-rs,appimagethumbnail,audiothumbnail,glycin-heif,comicbookth
 [Toolbar mainToolBar]
 IconSize=16
 ToolButtonStyle=IconOnly
+
+[UiSettings]
+ColorScheme=MaterialYouDark
