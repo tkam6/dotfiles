@@ -16,3 +16,6 @@ require("lua.quirks")
 require("lua.render")
 require("lua.rules")
 require("lua.vars")
+
+-- For Noctalia Color templates
+require("noctalia").apply_theme()

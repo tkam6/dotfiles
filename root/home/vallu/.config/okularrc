@@ -12,26 +12,29 @@ IconSize=16
 ToolButtonStyle=IconOnly
 
 [Recent Files]
-File1[$e]=$HOME/Downloads/INSTITUTE-PERMISSION-LETTER_COMPRESSED.pdf
-File10[$e]=$HOME/Downloads/superset/SAP-FDEData.pdf
-File2[$e]=$HOME/personal/arch_cmds.md
-File3[$e]=$HOME/Downloads/FUNC-MTRLS_Assignment-1.pdf
-File4[$e]=$HOME/Downloads/superset/Agentic Integration-AISpecialist.pdf
-File5[$e]=$HOME/Downloads/superset/Blueverse-AgenticAIEngineer.pdf
-File6[$e]=$HOME/Downloads/superset/Data&Analytics-DataAI.pdf
-File7[$e]=$HOME/Downloads/superset/Eligibility Criteria Document - Premier T-School Hiring - Batch 2027.pdf
-File8[$e]=$HOME/Downloads/superset/HLS_AssociateSoftwareEngineer.pdf
-File9[$e]=$HOME/Downloads/superset/iNXT-DigitalTwin.pdf
-Name1[$e]=INSTITUTE-PERMISSION-LETTER_COMPRESSED.pdf
-Name10[$e]=SAP-FDEData.pdf
-Name2[$e]=arch_cmds.md
-Name3[$e]=FUNC-MTRLS_Assignment-1.pdf
-Name4[$e]=Agentic Integration-AISpecialist.pdf
-Name5[$e]=Blueverse-AgenticAIEngineer.pdf
-Name6[$e]=Data&Analytics-DataAI.pdf
-Name7[$e]=Eligibility Criteria Document - Premier T-School Hiring - Batch 2027.pdf
-Name8[$e]=HLS_AssociateSoftwareEngineer.pdf
-Name9[$e]=iNXT-DigitalTwin.pdf
+File1[$e]=$HOME/personal/arch_cmds.md
+File10[$e]=/d/NIT/7_sem/func-materials/end-sem/Magnestism_Dielectric_Functional-Composites.pdf
+File2[$e]=$HOME/Downloads/FUNC-MTRLS_Assignment-1.pdf
+File3[$e]=$HOME/Downloads/superset/Agentic Integration-AISpecialist.pdf
+File4[$e]=$HOME/Downloads/superset/Blueverse-AgenticAIEngineer.pdf
+File5[$e]=$HOME/Downloads/superset/Data&Analytics-DataAI.pdf
+File6[$e]=$HOME/Downloads/superset/Eligibility Criteria Document - Premier T-School Hiring - Batch 2027.pdf
+File7[$e]=$HOME/Downloads/superset/HLS_AssociateSoftwareEngineer.pdf
+File8[$e]=$HOME/Downloads/superset/iNXT-DigitalTwin.pdf
+File9[$e]=$HOME/Downloads/superset/SAP-FDEData.pdf
+Name1[$e]=arch_cmds.md
+Name10[$e]=Magnestism_Dielectric_Functional-Composites.pdf
+Name2[$e]=FUNC-MTRLS_Assignment-1.pdf
+Name3[$e]=Agentic Integration-AISpecialist.pdf
+Name4[$e]=Blueverse-AgenticAIEngineer.pdf
+Name5[$e]=Data&Analytics-DataAI.pdf
+Name6[$e]=Eligibility Criteria Document - Premier T-School Hiring - Batch 2027.pdf
+Name7[$e]=HLS_AssociateSoftwareEngineer.pdf
+Name8[$e]=iNXT-DigitalTwin.pdf
+Name9[$e]=SAP-FDEData.pdf
 
 [Toolbar mainToolBar]
 ToolButtonStyle=IconOnly
+
+[UiSettings]
+ColorScheme=Darkly

@@ -13,7 +13,7 @@ hl.config({
         animate_mouse_windowdragging = true,
         size_limits_tiled = true,
         middle_click_paste = false,
-        disable_autoreload = true,
+        disable_autoreload = false,
         on_focus_under_fullscreen = 1,          -- 1 - takes over
         initial_workspace_tracking = 1,         -- 1 - single-shot
     },

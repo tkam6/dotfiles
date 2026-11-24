@@ -8,9 +8,9 @@ dynamic_title = true
 resize_increments = true
 
 [font]
-normal = { family = "Iosevka" }
+normal = { family = "IosevkaTerm NF" }
 offset = { x = 0, y = 0 }
-size = 15
+size = 18
 ##### square cells
 # [font]
 # size = 11.0

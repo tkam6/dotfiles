@@ -234,7 +234,7 @@ hl.workspace_rule({
     -- dropdown terminal workspace
     workspace = "special:dropdown_term",
     gaps_out = 0,
-    on_created_empty = "alacritty --option font.size=15 --class AlacrittyDropdown",
+    on_created_empty = "alacritty --option font.size=18 --class AlacrittyDropdown",
 })
 
 -------------------

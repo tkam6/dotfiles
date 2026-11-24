@@ -25,10 +25,10 @@ hl.bind("SUPER + E", hl.dsp.exec_cmd(fl_mgr))
 hl.bind("SUPER + F", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 hl.bind("SUPER + G", hl.dsp.window.pin({ action = "toggle" }))
 hl.bind("SUPER + Q", hl.dsp.exec_cmd(terminal))
---hl.bind("SUPER + R", hl.dsp.exec_cmd(menu_drun))
+hl.bind("SUPER + R", hl.dsp.exec_cmd(menu_drun))
 hl.bind("SUPER + T", hl.dsp.exec_cmd(menu_run))
 hl.bind("SUPER + X", hl.dsp.window.fullscreen({ mode = "maximized", action = "toggle" }))
---hl.bind("SUPER + F12",         hl.dsp.exec_cmd("loginctl lock-session"))
+hl.bind("SUPER + F12",         hl.dsp.exec_cmd("loginctl lock-session"))
 hl.bind("SUPER + SHIFT + F",     hl.dsp.window.float({ action = "toggle" }))
 hl.bind("SUPER + period",        hl.dsp.exec_cmd("skwd-wall-v2"))
 -- why the hell is it called "grave"?
@@ -45,17 +45,17 @@ hl.bind("SUPER + backspace", hl.dsp.exec_cmd("hyprctl eval 'hl.config({ [\"curso
 
 -- CLIPBOARD
 --hl.bind("SUPER + V", hl.dsp.exec_cmd("alacritty -o 'font.size=16' --class clipse -e clipse"))
---hl.bind(
---    "SUPER + V",
---    hl.dsp.exec_cmd(
---        "rofi -modi clipboard:/home/vallu/bin/cliphist-rofi-img -show clipboard \
---        -show-icons -theme-str 'window { width: 50%; height: 50%; } element { padding: 7px; }'"
---    )
---)
+hl.bind(
+    "SUPER + V",
+    hl.dsp.exec_cmd(
+        "rofi -modi clipboard:/home/vallu/bin/cliphist-rofi-img -show clipboard \
+        -show-icons -theme-str 'window { width: 50%; height: 50%; } element { padding: 7px; }'"
+    )
+)
 
 -- SCREENSHOTS
---hl.bind("Print", hl.dsp.exec_cmd("/home/vallu/.config/mango/scripts/scrshot.sh"))
---hl.bind("SUPER + Print", hl.dsp.exec_cmd("/home/vallu/.config/mango/scripts/scrshot_clip.sh"))
+hl.bind("Print", hl.dsp.exec_cmd("/home/vallu/.config/mango/scripts/scrshot.sh"))
+hl.bind("SUPER + Print", hl.dsp.exec_cmd("/home/vallu/.config/mango/scripts/scrshot_clip.sh"))
 
 -- CYCLE THROUGH WINDOWS
 --hl.bind("ALT + tab",         hl.dsp.window.cycle_next())
@@ -107,8 +107,8 @@ hl.bind("SUPER + Y",         hl.dsp.workspace.toggle_special("magic"))
 hl.bind("SUPER + SHIFT + Y", hl.dsp.window.move({ workspace = "special:magic", follow = false }))
 
 -- SCROLL THROUGH WORKSPACES
---hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
---hl.bind("SUPER + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("SUPER + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
+hl.bind("SUPER + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 
 -- "DROPDOWN" TERMINAL
 hl.bind("SUPER + escape", hl.dsp.workspace.toggle_special("dropdown_term"))
@@ -133,34 +133,34 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"), { locked = true
 hl.bind("XF86AudioStop",  hl.dsp.exec_cmd("playerctl stop"), { locked = true })
 
 -- NOCTALIA v5 KEYBINDS
---local ipc = "noctalia msg "
---hl.bind("SUPER + Z",         hl.dsp.exec_cmd(ipc .. "panel-toggle control-center network"))
---hl.bind("SUPER + B",         hl.dsp.exec_cmd(ipc .. "panel-toggle control-center bluetooth"))
---hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd(ipc .. "wifi-toggle"))
---hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd(ipc .. "bluetooth-toggle"))
---hl.bind("SUPER + space",     hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
---hl.bind("SUPER + comma",     hl.dsp.exec_cmd(ipc .. "settings-toggle"))
---hl.bind("ALT + tab",         hl.dsp.exec_cmd(ipc .. "window-switcher"))
+local ipc = "noctalia msg "
+hl.bind("SUPER + Z",         hl.dsp.exec_cmd(ipc .. "panel-toggle control-center network"))
+hl.bind("SUPER + B",         hl.dsp.exec_cmd(ipc .. "panel-toggle control-center bluetooth"))
+hl.bind("SUPER + SHIFT + W", hl.dsp.exec_cmd(ipc .. "wifi-toggle"))
+hl.bind("SUPER + SHIFT + B", hl.dsp.exec_cmd(ipc .. "bluetooth-toggle"))
+hl.bind("SUPER + space",     hl.dsp.exec_cmd(ipc .. "panel-toggle launcher"))
+hl.bind("SUPER + comma",     hl.dsp.exec_cmd(ipc .. "settings-toggle"))
+hl.bind("ALT + tab",         hl.dsp.exec_cmd(ipc .. "window-switcher"))
 
 -- SERPANTINUM KEYBINDS
-local ser_ipc = "serpantinum msg"
-hl.bind("Print",                 hl.dsp.exec_cmd("serpantinum screenshot"))
-hl.bind("SHIFT + Print",         hl.dsp.exec_cmd("serpantinum screenshot --edit"))
-hl.bind("SUPER + Print",         hl.dsp.exec_cmd("serpantinum screenshot --full"))
-hl.bind("SUPER + SHIFT + Print", hl.dsp.exec_cmd("serpantinum screenshot --full --edit"))
-hl.bind("SUPER + F12",           hl.dsp.exec_cmd("serpantinum lock"), { repeating = true, locked = true })
-hl.bind("SUPER + V",             hl.dsp.exec_cmd(ser_ipc .. " toggle clipboard"))
-hl.bind("SUPER + Z",             hl.dsp.exec_cmd(ser_ipc .. " toggle network"))
-hl.bind("SUPER + B",             hl.dsp.exec_cmd(ser_ipc .. " toggle system"))
-hl.bind("SUPER + N",             hl.dsp.exec_cmd(ser_ipc .. " toggle system"))
-hl.bind("SUPER + I",             hl.dsp.exec_cmd(ser_ipc .. " toggle guide"))
-hl.bind("SUPER + R",             hl.dsp.exec_cmd(ser_ipc .. " toggle launcher"))
-hl.bind("SUPER + period",        hl.dsp.exec_cmd(ser_ipc .. " toggle wallpaper"))
-hl.bind("SUPER + space",         hl.dsp.exec_cmd(ser_ipc .. " toggle launcher"))
+--local ser_ipc = "serpantinum msg"
+--hl.bind("Print",                 hl.dsp.exec_cmd("serpantinum screenshot"))
+--hl.bind("SHIFT + Print",         hl.dsp.exec_cmd("serpantinum screenshot --edit"))
+--hl.bind("SUPER + Print",         hl.dsp.exec_cmd("serpantinum screenshot --full"))
+--hl.bind("SUPER + SHIFT + Print", hl.dsp.exec_cmd("serpantinum screenshot --full --edit"))
+--hl.bind("SUPER + F12",           hl.dsp.exec_cmd("serpantinum lock"), { repeating = true, locked = true })
+--hl.bind("SUPER + V",             hl.dsp.exec_cmd(ser_ipc .. " toggle clipboard"))
+--hl.bind("SUPER + Z",             hl.dsp.exec_cmd(ser_ipc .. " toggle network"))
+--hl.bind("SUPER + B",             hl.dsp.exec_cmd(ser_ipc .. " toggle system"))
+--hl.bind("SUPER + N",             hl.dsp.exec_cmd(ser_ipc .. " toggle system"))
+--hl.bind("SUPER + I",             hl.dsp.exec_cmd(ser_ipc .. " toggle guide"))
+--hl.bind("SUPER + R",             hl.dsp.exec_cmd(ser_ipc .. " toggle launcher"))
+--hl.bind("SUPER + period",        hl.dsp.exec_cmd(ser_ipc .. " toggle wallpaper"))
+--hl.bind("SUPER + space",         hl.dsp.exec_cmd(ser_ipc .. " toggle launcher"))
 
 -- SNAPPY-SWITCHER (FOR ALT+TAB)
 -- standard (most recently used) order
-hl.bind("ALT + tab",         hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
-hl.bind("ALT + SHIFT + tab", hl.dsp.exec_cmd("snappy-switcher prev --mod alt"))
+--hl.bind("ALT + tab",         hl.dsp.exec_cmd("snappy-switcher next --mod alt"))
+--hl.bind("ALT + SHIFT + tab", hl.dsp.exec_cmd("snappy-switcher prev --mod alt"))
 -- workspace-filtered
-hl.bind("SUPER + tab",       hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))
+--hl.bind("SUPER + tab",       hl.dsp.exec_cmd("snappy-switcher next --workspace --mod super"))

@@ -1,6 +1,6 @@
 configuration {
     modes: "drun,run";
-    font: "Iosevka Nerd Font Mono Bold 12";
+    font: "Iosevka NF 12";
     location: 0;
     fixed-num-lines: false;
     show-icons: true;
