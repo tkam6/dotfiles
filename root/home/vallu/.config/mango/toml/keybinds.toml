@@ -1,0 +1,199 @@
+[bind.default]
+"SUPER+SHIFT+k" = "setlayout,scroller"
+"SUPER+SHIFT+h" = "setlayout,right_tile"
+"SUPER+SHIFT+d" = "togglejump"
+
+# Reload config
+"SUPER+SHIFT+p" = "reload_config"
+
+# Menu, terminal and other applications
+"SUPER+r" = "spawn,rofi -show run"
+"SUPER+t" = "spawn,rofi -show drun"
+#"SUPER+r" = "spawn,dmenu_run -i -b -p \"$ \" -nb '#FFF' -nf '#000' -sb '#107010' -fn 'Iosevka Fixed ExtraBold'"
+# "SUPER+r" = "spawn,dmenu_extended_run"
+# "SUPER+r" = "spawn,bemenu-run -b -R 15 -i -p \"bemenu\" --ch 20 --cw 2 -H 50 -W 0.85 --hp 10 --fn \"Iosevka 17\" --tb \"#111111\" --tf \"#aaaaaa\" --fb \"#111111\" --ff \"#ffffff\" --cb \"#111111\" --cf \"#ffffff\" --nb \"#111111\" --nf \"#888888\" --ab \"#111111\" --af \"#888888\" --sb \"#ffffff\" --sf \"#111111\" --hb \"#111111\" --hf \"#ffffff\""
+# "SUPER+r" = "spawn,j4-dmenu-desktop --dmenu=\"(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | bemenu -b -R 15 -i -p 'bemenu' --ch 20 --cw 2 -H 50 -W 0.85 --hp 10 --fn 'Iosevka 17' --tb '#111111' --tf '#aaaaaa' --fb '#111111' --ff '#ffffff' --cb '#111111' --cf '#ffffff' --nb '#111111' --nf '#888888' --ab '#111111' --af '#888888' --sb '#ffffff' --sf '#111111' --hb '#111111' --hf '#ffffff'\""
+"SUPER+q" = "spawn,alacritty"
+"SUPER+e" = "spawn,nautilus"
+
+# Logout
+"CTRL+ALT+Delete" = "spawn,loginctl terminate-user $(whoami)"
+
+# Switch window focus
+"ALT+Tab" = "focusstack,next"
+"SUPER+Left" = "focusdir,left"
+"SUPER+Right" = "focusdir,right"
+"SUPER+Up" = "focusdir,up"
+"SUPER+Down" = "focusdir,down"
+"SUPER+a" = "focusdir,left"
+"SUPER+d" = "focusdir,right"
+"SUPER+w" = "focusdir,up"
+"SUPER+s" = "focusdir,down"
+"SUPER+h" = "focusdir,left"
+"SUPER+l" = "focusdir,right"
+"SUPER+k" = "focusdir,up"
+"SUPER+j" = "focusdir,down"
+
+# Swap windows
+"SUPER+SHIFT+Up" = "exchange_client,up"
+"SUPER+SHIFT+Down" = "exchange_client,down"
+"SUPER+SHIFT+Left" = "exchange_client,left"
+"SUPER+SHIFT+Right" = "exchange_client,right"
+
+# Switch window status
+"SUPER+g" = "toggleglobal"
+"SUPER+backslash" = "togglefloating"
+
+# Close, maximise, minimise, restore minimised and fullscreen
+"SUPER+c" = "killclient"
+"SUPER+x" = "togglemaximizescreen"
+"SUPER+f" = "togglefullscreen"
+"SUPER+y" = "minimized"
+"SUPER+SHIFT+y" = "restore_minimized"
+
+# Scratchpad
+"SUPER+SHIFT+z" = "toggle_scratchpad"
+
+# Clipboard, notification history, WiFi and Bluetooth
+"SUPER+v" = "spawn,kitty --class clipse -e clipse"
+# "SUPER+n" = "spawn,swaync-client -t -sw"
+# "SUPER+SHIFT+w" = "spawn,~/.config/mango/scripts/toggle_wifi.sh"
+# "SUPER+SHIFT+b" = "spawn,bluetoothctl power toggle"
+
+# Screen lock and suspend
+# "SUPER+l" = "spawn,hyprlock"
+# "SUPER+SHIFT+l" = "spawn,systemctl suspend"
+
+# Screenshot and screen recorder
+"SUPER+Print" = "spawn,/home/vallu/.config/mango/scripts/scrshot_clip.sh"
+"Print" = "spawn,/home/vallu/.config/mango/scripts/scrshot.sh"
+
+# Scroller layout
+"SUPER+m" = "switch_proportion_preset"
+
+"SUPER+ALT+Left" = "viewtoleft_have_client,0"
+"SUPER+ALT+Right" = "viewtoright_have_client,0"
+
+# Tag switch by workspace index
+"SUPER+1" = "view,1,0"
+"SUPER+2" = "view,2,0"
+"SUPER+3" = "view,3,0"
+"SUPER+4" = "view,4,0"
+"SUPER+5" = "view,5,0"
+"SUPER+6" = "view,6,0"
+"SUPER+7" = "view,7,0"
+"SUPER+8" = "view,8,0"
+"SUPER+9" = "view,9,0"
+
+# Move application to tag and focus
+# tagsilent: move client to the tag and not focus it
+"SUPER+SHIFT+1" = "tag,1,0"
+"SUPER+SHIFT+2" = "tag,2,0"
+"SUPER+SHIFT+3" = "tag,3,0"
+"SUPER+SHIFT+4" = "tag,4,0"
+"SUPER+SHIFT+5" = "tag,5,0"
+"SUPER+SHIFT+6" = "tag,6,0"
+"SUPER+SHIFT+7" = "tag,7,0"
+"SUPER+SHIFT+8" = "tag,8,0"
+"SUPER+SHIFT+9" = "tag,9,0"
+
+# Monitor switch
+# "ALT+SHIFT+Left" = "focusmon,left"
+# "ALT+SHIFT+Right" = "focusmon,right"
+# "SUPER+ALT+Left" = "tagmon,left"
+# "SUPER+ALT+Right" = "tagmon,right"
+
+# Move windows
+"CTRL+SHIFT+SUPER+Up" = "movewin,+0,-50"
+"CTRL+SHIFT+SUPER+Down" = "movewin,+0,+50"
+"CTRL+SHIFT+SUPER+Left" = "movewin,-50,+0"
+"CTRL+SHIFT+SUPER+Right" = "movewin,+50,+0"
+
+# Resize windows
+"CTRL+SUPER+Up" = "resizewin,+0,-50"
+"CTRL+SUPER+Down" = "resizewin,+0,+50"
+"CTRL+SUPER+Left" = "resizewin,-50,+0"
+"CTRL+SUPER+Right" = "resizewin,+50,+0"
+
+# VOLUME KEYS
+# Without overdrive
+# "XF86AudioRaiseVolume" = "spawn,wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+# "XF86AudioLowerVolume" = "spawn,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+# "XF86AudioMute" = "spawn,wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+# "XF86AudioMicMute" = "spawn,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+# With overdrive
+"XF86AudioRaiseVolume" = "spawn,pactl set-sink-volume @DEFAULT_SINK@ +5%"
+"XF86AudioLowerVolume" = "spawn,pactl set-sink-volume @DEFAULT_SINK@ -5%"
+"XF86AudioMute" = "spawn,pactl set-sink-mute @DEFAULT_SINK@ toggle"
+"XF86AudioMicMute" = "spawn,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
+# # # # # # # # # # # # #
+# WAYBAR CUSTOM MODULES #
+# # # # # # # # # # # # #
+# Control by special scripts (for Waybar custom modules)
+# "XF86AudioRaiseVolume" = "spawn,~/.config/mango/scripts/vol_chg.sh up"
+# "XF86AudioLowerVolume" = "spawn,~/.config/mango/scripts/vol_chg.sh down"
+# "XF86AudioMute" = "spawn,~/.config/mango/scripts/vol_chg.sh mute"
+# "XF86AudioMicMute" = "spawn,wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+
+# # # # # # # # # # # # # #
+# NOCTALIA SHELL KEYBINDS #
+# # # # # # # # # # # # # #
+"SUPER+space" = "spawn,qs -c noctalia-shell ipc call launcher toggle"
+"SUPER+comma" = "spawn,qs -c noctalia-shell ipc call settings toggle"
+"SUPER+SHIFT+a" = "spawn,qs -c noctalia-shell ipc call controlCenter toggle"
+"SUPER+SHIFT+l" = "spawn,qs -c noctalia-shell ipc call lockScreen lock"
+"SUPER+n" = "spawn,qs -c noctalia-shell ipc call notifications toggleHistory"
+"SUPER+z" = "spawn,qs -c noctalia-shell ipc call network togglePanel"
+"SUPER+b" = "spawn,qs -c noctalia-shell ipc call bluetooth togglePanel"
+"SUPER+SHIFT+w" = "spawn,qs -c noctalia-shell ipc call wifi toggle"
+"SUPER+SHIFT+b" = "spawn,qs -c noctalia-shell ipc call bluetooth toggle"
+# "CTRL+ALT+Delete" = "spawn,qs -c noctalia-shell ipc call sessionMenu toggle"
+# "XF86AudioRaiseVolume" = "spawn,qs -c noctalia-shell ipc call volume increase"
+# "XF86AudioLowerVolume" = "spawn,qs -c noctalia-shell ipc call volume decrease"
+# "XF86AudioMute" = "spawn,qs -c noctalia-shell ipc call volume muteOutput"
+# "XF86MonBrightnessUp" = "spawn,qs -c noctalia-shell ipc call brightness increase"
+# "XF86MonBrightnessDown" = "spawn,qs -c noctalia-shell ipc call brightness decrease"
+
+# # # # # # # # # # # # # # # #
+# NOCTALIA SHELL v5 KEYBINDS  #
+# # # # # # # # # # # # # # # #
+# "SUPER+l" = "spawn,noctalia msg lockScreen lock"
+# "SUPER+a" = "spawn,noctalia msg panel-toggle control-center"
+# "SUPER+n" = "spawn,noctalia msg panel-toggle control-center notifications"
+# "SUPER+w" = "spawn,noctalia msg panel-toggle control-center network"
+# "SUPER+b" = "spawn,noctalia msg panel-toggle control-center bluetooth"
+# "SUPER+SHIFT+w" = "spawn,noctalia msg wifi-toggle"
+# "SUPER+SHIFT+b" = "spawn,noctalia msg bluetooth-toggle"
+# "CTRL+ALT+Delete" = "spawn,noctalia msg sessionMenu-toggle"
+# "XF86AudioRaiseVolume" = "spawn,noctalia msg volume-up"
+# "XF86AudioLowerVolume" = "spawn,noctalia msg volume-down"
+# "XF86AudioMute" = "spawn,noctalia msg volume-mute"
+# "XF86MonBrightnessUp" = "spawn,noctalia msg brightness-up"
+# "XF86MonBrightnessDown" = "spawn,noctalia msg brightness-down"
+
+# bindl entries (the "lock" flag)
+[bind.default.lock]
+# BRIGHTNESS KEYS
+"XF86MonBrightnessUp" = "spawn,brightnessctl -e2 set 5%+"
+"XF86MonBrightnessDown" = "spawn,brightnessctl -e2 --min-value=1000 set 5%-"
+# PLAYBACK CONTROL KEYS
+"XF86AudioNext" = "spawn,playerctl next"
+"XF86AudioPlay" = "spawn,playerctl play-pause"
+#"XF86AudioPause" = "spawn,playerctl play-pause"
+"XF86AudioPrev" = "spawn,playerctl previous"
+"XF86AudioStop" = "spawn,playerctl stop"
+
+# Mouse button bindings (all disabled)
+# NONE key only works in overview mode
+# [mousebind.default]
+# "SUPER+btn_left" = "moveresize,curmove"
+# "SUPER+btn_middle" = "togglemaximizescreen,0"
+# "SUPER+btn_right" = "moveresize,curresize"
+# "btn_left" = "toggleoverview,1"
+# "btn_right" = "killclient,0"
+
+# Axis bindings (all disabled)
+# [axisbind.default]
+# "SUPER+UP" = "viewtoleft_have_client"
+# "SUPER+DOWN" = "viewtoright_have_client"
